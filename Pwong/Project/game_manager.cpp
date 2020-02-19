@@ -1,8 +1,9 @@
 #include "game_manager.h"
 
 #include <iostream>
-
 #include "raylib.h"
+
+#include "player.h"
 
 namespace MyGame {
 namespace GameManager{
@@ -34,6 +35,7 @@ namespace GameManager{
 		
 		SetExitKey(KEY_F4);
 
+		Player::init();
 		//All inits
 	}
 
@@ -46,6 +48,7 @@ namespace GameManager{
 			break;
 
 		case Game:
+			Player::update();
 			break;
 
 		case Credits:
@@ -59,12 +62,17 @@ namespace GameManager{
 
 	void draw() {
 
+		BeginDrawing();
+
+		ClearBackground(BLACK);
+
 		switch (actualScene)
 		{
 		case MainMenu:
 			break;
 
 		case Game:
+			Player::draw();
 			break;
 
 		case Credits:
@@ -74,6 +82,8 @@ namespace GameManager{
 			std::cout << "There was an error in the game manager Drawing section" << std::endl;
 			break;
 		}
+
+		EndDrawing();
 	}
 
 	void deInit() {
