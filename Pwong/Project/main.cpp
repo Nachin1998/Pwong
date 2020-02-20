@@ -2,6 +2,6 @@
 
 using namespace MyGame;
 
-void main() {
+int main(void) {
 	GameManager::runGame();
 }

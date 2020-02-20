@@ -3,7 +3,7 @@
 #include <iostream>
 #include "raylib.h"
 
-#include "player.h"
+#include "game_logic.h"
 
 namespace MyGame {
 namespace GameManager{
@@ -12,8 +12,10 @@ namespace GameManager{
 	static void update();
 	static void draw();
 	static void deInit();
-
+	
 	Scene actualScene = Game;
+
+	Color backColor = WHITE;
 
 	void runGame() {
 
@@ -35,12 +37,20 @@ namespace GameManager{
 		
 		SetExitKey(KEY_F4);
 
-		Player::init();
+		GameLogic::init();
 		//All inits
 	}
 
 	void update() {
 		//UpdateMusicStream(musica);
+
+		if (GameLogic::pause) {
+			backColor = BLACK;
+		}
+		else
+		{
+			backColor = WHITE;
+		}
 
 		switch (actualScene)
 		{
@@ -48,7 +58,7 @@ namespace GameManager{
 			break;
 
 		case Game:
-			Player::update();
+			GameLogic::update();
 			break;
 
 		case Credits:
@@ -64,7 +74,7 @@ namespace GameManager{
 
 		BeginDrawing();
 
-		ClearBackground(BLACK);
+		ClearBackground(backColor);
 
 		switch (actualScene)
 		{
@@ -72,7 +82,7 @@ namespace GameManager{
 			break;
 
 		case Game:
-			Player::draw();
+			GameLogic::draw();
 			break;
 
 		case Credits:

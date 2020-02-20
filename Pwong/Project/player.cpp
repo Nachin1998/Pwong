@@ -6,15 +6,12 @@ namespace MyGame {
 namespace Player {
 using namespace GameManager;
 
-	void init();
-	void update();
-	void draw();
 	static void playerMovement(Rectangle &rec, int keyUp, int keyDown);
 
-	static int playerWidth = 20;
-	static int playerHeight = 120;
+	static float playerWidth = 20.0f;
+	static float playerHeight = 120.0f;
 	static int playerSpeed = 300;
-	static int playerStartPosition = 45;
+	static int playerStartPosition = 80;
 	static int mapLimit = 5;
 
 	Player player1;
@@ -45,7 +42,10 @@ using namespace GameManager;
 	void draw() {
 
 		DrawRectangleRec(player1.rec, player1.color);
+		DrawRectangleLinesEx(player1.rec, 2, SKYBLUE);
+
 		DrawRectangleRec(player2.rec, player2.color);
+		DrawRectangleLinesEx(player2.rec, 2, SKYBLUE);
 	}
 
 	void playerMovement(Rectangle &rec, int keyUp, int keyDown) {

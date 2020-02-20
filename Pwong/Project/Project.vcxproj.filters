@@ -22,6 +22,9 @@
     <ClCompile Include="player.cpp">
       <Filter>entities</Filter>
     </ClCompile>
+    <ClCompile Include="game_logic.cpp">
+      <Filter>game_manager</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="game_manager.h">
@@ -29,6 +32,9 @@
     </ClInclude>
     <ClInclude Include="player.h">
       <Filter>entities</Filter>
+    </ClInclude>
+    <ClInclude Include="game_logic.h">
+      <Filter>game_manager</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
