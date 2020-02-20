@@ -133,13 +133,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="game_logic.cpp" />
+    <ClCompile Include="gameplay.cpp" />
     <ClCompile Include="game_manager.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="player.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="game_logic.h" />
+    <ClInclude Include="gameplay.h" />
     <ClInclude Include="game_manager.h" />
     <ClInclude Include="player.h" />
   </ItemGroup>

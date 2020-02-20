@@ -8,6 +8,7 @@ namespace Player {
 
 	struct Player {
 		Rectangle rec;
+		int score;
 		Color color;
 	};
 
@@ -17,7 +18,6 @@ namespace Player {
 	void init();
 	void update();
 	void draw();
-
 }
 }
 

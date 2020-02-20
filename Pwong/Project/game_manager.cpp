@@ -3,7 +3,7 @@
 #include <iostream>
 #include "raylib.h"
 
-#include "game_logic.h"
+#include "gameplay.h"
 
 namespace MyGame {
 namespace GameManager{

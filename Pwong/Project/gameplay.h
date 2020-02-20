@@ -1,5 +1,5 @@
-#ifndef GAME_LOGIC_H
-#define GAME_LOGIC_H
+#ifndef GAMEPLAY_H
+#define GAMEPLAY_H
 
 #include "raylib.h"
 
@@ -7,13 +7,15 @@ namespace MyGame {
 namespace GameLogic {
 
 	struct Ball {
-		Vector2 position;
+		Vector2 pos;
 		float radius;
+		Vector2 movementSpeed;
 		bool active;
 		Color color;
 	};
 
 	extern Ball ball;
+
 	extern bool pause;
 	extern bool startGame;
 

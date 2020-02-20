@@ -14,6 +14,7 @@ namespace GameManager{
 	};
 
 	extern Scene actualScene;
+
 	void runGame();
 }
 }
