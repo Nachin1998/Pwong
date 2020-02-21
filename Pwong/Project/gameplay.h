@@ -4,7 +4,7 @@
 #include "raylib.h"
 
 namespace MyGame {
-namespace GameLogic {
+namespace Gameplay {
 
 	struct Ball {
 		Vector2 pos;

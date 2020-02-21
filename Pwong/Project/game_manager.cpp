@@ -37,14 +37,15 @@ namespace GameManager{
 		
 		SetExitKey(KEY_F4);
 
-		GameLogic::init();
+		Gameplay::init();
 		//All inits
 	}
 
 	void update() {
 		//UpdateMusicStream(musica);
 
-		if (GameLogic::pause) {
+		if (Gameplay::pause) 
+		{
 			backColor = BLACK;
 		}
 		else
@@ -58,7 +59,7 @@ namespace GameManager{
 			break;
 
 		case Game:
-			GameLogic::update();
+			Gameplay::update();
 			break;
 
 		case Credits:
@@ -82,7 +83,7 @@ namespace GameManager{
 			break;
 
 		case Game:
-			GameLogic::draw();
+			Gameplay::draw();
 			break;
 
 		case Credits:

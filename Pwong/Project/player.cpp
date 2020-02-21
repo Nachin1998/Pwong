@@ -24,14 +24,14 @@ using namespace GameManager;
 		player1.rec.width = playerWidth;
 		player1.rec.height = playerHeight;
 		player1.rec.x = playerStartPosition - player1.rec.width / 2;
-		player1.rec.y = screenHeight / 2 - player1.rec.width / 2;
+		player1.rec.y = screenHeight / 2 - player1.rec.height / 2;
 		player1.score = 0;
 		player1.color = RED;
 
 		player2.rec.width = playerWidth;
 		player2.rec.height = playerHeight;
 		player2.rec.x = screenWidth - playerStartPosition - player2.rec.width / 2;
-		player2.rec.y = screenHeight / 2 - player2.rec.width / 2;
+		player2.rec.y = screenHeight / 2 - player2.rec.height / 2;
 		player2.score = 0;
 		player2.color = GREEN;
 	}
