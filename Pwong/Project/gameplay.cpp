@@ -7,6 +7,12 @@ namespace MyGame {
 namespace Gameplay {
 using namespace GameManager;
 
+	static struct MapDivision{
+		Rectangle rec;
+		Color color;
+	};
+
+	static MapDivision mapDivision;
 	static void ballUpdate();
 	static void collisionManager(Rectangle &playerRec);
 	static void gameLogic(Player::Player &player);
@@ -23,13 +29,19 @@ using namespace GameManager;
 		endGame = false;
 		pause = false;
 
-		ball.active = false;
 		ball.pos.x = screenWidth / 2;
 		ball.pos.y = screenHeight / 2;
 		ball.radius = 8.0f;
 		ball.movementSpeed.x = 250.0f;
 		ball.movementSpeed.y = 250.0f;
+		ball.active = false;
 		ball.color = SKYBLUE;
+
+		mapDivision.rec.width = 15;
+		mapDivision.rec.height = screenHeight;
+		mapDivision.rec.x = screenWidth / 2 - mapDivision.rec.width / 2;
+		mapDivision.rec.y = screenHeight / 2 - mapDivision.rec.height / 2;
+		mapDivision.color = LIGHTGRAY;
 
 		Player::init();
 	}
@@ -74,10 +86,16 @@ using namespace GameManager;
 				gameLogic(Player::player2);
 			}
 		}
+
+		if (endGame == true)
+		{
+			actualScene = GameOver;
+		}
 	}
 
 	void draw() {
 
+		
 		if (!startGame)
 		{
 			DrawText("Press ´Enter´", screenWidth / 2 - MeasureText("Press ´Enter´", 80) / 2, screenHeight / 2 - 50, 80, LIGHTGRAY);
@@ -87,7 +105,7 @@ using namespace GameManager;
 		if (startGame && !pause)
 		{
 			DrawText(FormatText("%i", Player::player1.score), screenWidth / 2 - MeasureText("0", 200) / 2 - 90, screenHeight / 2 - 92, 200, LIGHTGRAY);
-			DrawText("|", screenWidth / 2 - MeasureText("|", 250) / 2, screenHeight / 2 - 110, 250, LIGHTGRAY);
+			DrawRectangleRec(mapDivision.rec, mapDivision.color);
 			DrawText(FormatText("%i", Player::player2.score), screenWidth / 2 - MeasureText("0", 200) / 2 + 90, screenHeight / 2 - 92, 200, LIGHTGRAY);
 		}
 
@@ -102,7 +120,6 @@ using namespace GameManager;
 			DrawText("Press ´Enter´ to continue", screenWidth / 2 - MeasureText("Press ´Enter´ to continue", 40) / 2, screenHeight / 2 + 30, 40, LIGHTGRAY);
 			
 			DrawText(FormatText("%i", Player::player1.score), screenWidth / 2 - MeasureText("0", 200) / 2 - 90, screenHeight / 2 - 92, 200, RED);
-			DrawText("|", screenWidth / 2 - MeasureText("|", 250) / 2, screenHeight / 2 - 110, 250, WHITE);
 			DrawText(FormatText("%i", Player::player2.score), screenWidth / 2 - MeasureText("0", 200) / 2 + 90, screenHeight / 2 - 92, 200, GREEN);
 
 			DrawCircleGradient(ball.pos.x, ball.pos.y, ball.radius, BLACK, WHITE);
@@ -143,17 +160,20 @@ using namespace GameManager;
 
 		if (CheckCollisionCircleRec(ball.pos, ball.radius, playerRec))
 		{
-			ball.movementSpeed.x *= -1;
+			if ((ball.pos.x < playerRec.x || ball.pos.x > playerRec.x) && (ball.pos.y < playerRec.y || ball.pos.y > playerRec.y))
+			{
+				ball.movementSpeed.x *= -1;
+			}
 		}
 	}
 
 	void gameLogic(Player::Player &player) {
 
-		player.score++;
-		ball.pos.x = screenWidth / 2;
 		ball.pos.y = screenHeight / 2;
+		ball.pos.x = screenWidth / 2;
+		player.score += 1;
 
-		if (player.score = 5) 
+		if (player.score == 5) 
 		{
 			endGame = true;
 		}

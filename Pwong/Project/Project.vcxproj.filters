@@ -13,6 +13,9 @@
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
     </Filter>
+    <Filter Include="utility">
+      <UniqueIdentifier>{bd4d1b76-4c76-46f2-bb47-af69c8da9b11}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
@@ -25,6 +28,12 @@
     <ClCompile Include="gameplay.cpp">
       <Filter>scenes</Filter>
     </ClCompile>
+    <ClCompile Include="game_over.cpp">
+      <Filter>scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="UI.cpp">
+      <Filter>utility</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="game_manager.h">
@@ -35,6 +44,12 @@
     </ClInclude>
     <ClInclude Include="gameplay.h">
       <Filter>scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="game_over.h">
+      <Filter>scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="UI.h">
+      <Filter>utility</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

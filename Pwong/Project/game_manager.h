@@ -10,6 +10,7 @@ namespace GameManager{
 	enum Scene {
 		MainMenu,
 		Game,
+		GameOver,
 		Credits
 	};
 
