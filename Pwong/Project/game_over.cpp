@@ -1,5 +1,7 @@
 #include "game_over.h"
 
+#include "UI.h"
+
 namespace MyGame {
 namespace GameOver {
 

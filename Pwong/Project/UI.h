@@ -9,10 +9,15 @@ namespace UI {
 	struct Button {
 		Rectangle rec;
 		float lineThickness;
-		Color color;
+		float fontSize;
+		Color linesColor;
+		Color textColor;
+		Color buttonColor;
 	};
 
-	void createButton(const char* title, Button button, Color edgesColor, Color titleColor, float fontSize);
+	void createTitle(const char *title, Button button, Color edgesColor, Color titleColor, float fontSize);
+	void createButton(const char *text, Button button, Color edgesColor, Color titleColor, float fontSize);
+	void createProText(const char *text, float posX, float posY, float fontSize, Color textColor);
 }
 }
 

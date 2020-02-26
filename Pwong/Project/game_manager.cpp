@@ -1,8 +1,8 @@
 #include "game_manager.h"
 
 #include <iostream>
-#include "raylib.h"
 
+#include "main_menu.h"
 #include "gameplay.h"
 
 namespace MyGame {
@@ -12,9 +12,10 @@ namespace GameManager{
 	static void update();
 	static void draw();
 	static void deInit();
-	
-	Scene actualScene = Game;
 
+	Rectangle gameEdge;
+	
+	Scene actualScene = MainMenu;
 	Color backColor = WHITE;
 
 	void runGame() {
@@ -35,9 +36,15 @@ namespace GameManager{
 
 		//InitAudioDevice();
 		
+		gameEdge.width = screenWidth;
+		gameEdge.height = screenHeight;
+		gameEdge.x = screenWidth / 2 - gameEdge.width / 2;
+		gameEdge.y = screenHeight / 2 - gameEdge.height / 2;
+
 		SetExitKey(KEY_F4);
 
 		Gameplay::init();
+		MainMenu::init();
 		//All inits
 	}
 
@@ -56,6 +63,7 @@ namespace GameManager{
 		switch (actualScene)
 		{
 		case MainMenu:
+			MainMenu::update();
 			break;
 
 		case Game:
@@ -77,9 +85,12 @@ namespace GameManager{
 
 		ClearBackground(backColor);
 
+		DrawRectangleLinesEx(gameEdge, 5, LIGHTGRAY);
+
 		switch (actualScene)
 		{
 		case MainMenu:
+			MainMenu::draw();
 			break;
 
 		case Game:
