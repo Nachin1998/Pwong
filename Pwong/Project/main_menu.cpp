@@ -14,10 +14,19 @@ using namespace UI;
 	static void updateControls();
 	static void drawControls();
 	
-	Button mainTitle;
-	Button menuButtons[maxButtons];
-	Button controlsTitle;
-	Button controlsButton;
+	static Button mainTitle;
+	static Button menuButtons[maxButtons];
+	static Button controlsTitle;
+	static Button controlsButton;
+
+	static int subTitleFontSize = 60;
+	static int textFontSize = 30;
+	static int distanceBetweenButtons = 95;
+	static Color titleTextColor = SKYBLUE;
+	static Color textColor = LIGHTGRAY;
+
+	static Color mouseOverButton = LIGHTGRAY;
+	static Color mouseAwayFromButton = BLANK;
 
 	bool controlsActive;
 
@@ -28,19 +37,19 @@ using namespace UI;
 		mainTitle.rec.width = 420;
 		mainTitle.rec.height = 150;
 		mainTitle.rec.x = screenWidth / 2 - mainTitle.rec.width / 2;
-		mainTitle.rec.y = (screenHeight / 2 - 220) - mainTitle.rec.height / 2;
+		mainTitle.rec.y = (screenHeight / 2 - 250) - mainTitle.rec.height / 2;
 		mainTitle.lineThickness = 5;
 		mainTitle.fontSize = 100;
 		mainTitle.linesColor = LIGHTGRAY;
 		mainTitle.textColor = WHITE;
-		mainTitle.buttonColor = SKYBLUE;
+		mainTitle.buttonColor = titleTextColor;
 
 		for (int i = 0; i < maxButtons; i++)
 		{
 			menuButtons[i].rec.width = 250;
 			menuButtons[i].rec.height = 75;
 			menuButtons[i].rec.x = screenWidth / 2 - menuButtons[i].rec.width / 2;
-			menuButtons[i].rec.y = (screenHeight / 2 - 50 + (95 * i)) - menuButtons[i].rec.height / 2;
+			menuButtons[i].rec.y = (screenHeight / 2 - 50 + (distanceBetweenButtons * i)) - menuButtons[i].rec.height / 2;
 			menuButtons[i].lineThickness = 3;
 			menuButtons[i].fontSize = 40;
 			menuButtons[i].linesColor = SKYBLUE;
@@ -57,7 +66,7 @@ using namespace UI;
 			for (int i = 0; i < maxButtons; i++) {
 				if (CheckCollisionPointRec(GetMousePosition(), menuButtons[i].rec))
 				{
-					menuButtons[i].buttonColor = LIGHTGRAY;
+					menuButtons[i].buttonColor = mouseOverButton;
 
 					if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON))
 					{
@@ -87,7 +96,7 @@ using namespace UI;
 				}
 				else
 				{
-					menuButtons[i].buttonColor = BLANK;
+					menuButtons[i].buttonColor = mouseAwayFromButton;
 				}
 			}
 		}
@@ -113,7 +122,6 @@ using namespace UI;
 		{
 			drawControls();
 		}
-		
 	}
 
 	void initControls() {
@@ -143,17 +151,16 @@ using namespace UI;
 
 		if (CheckCollisionPointRec(GetMousePosition(), controlsButton.rec))
 		{
-			controlsButton.buttonColor = LIGHTGRAY;
+			controlsButton.buttonColor = mouseOverButton;
 
 			if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON))
 			{
 				controlsActive = false;
 			}
-
 		}
 		else
 		{
-			controlsButton.buttonColor = BLANK;
+			controlsButton.buttonColor = mouseAwayFromButton;
 		}
 	}
 
@@ -161,15 +168,15 @@ using namespace UI;
 
 		createButton("Controls", controlsTitle, controlsTitle.linesColor, controlsTitle.textColor, controlsTitle.fontSize);
 
-		createProText("Movement", screenWidth / 2, screenHeight / 2 - 200, 60, SKYBLUE);
-		createProText("Player 1 - W/S", screenWidth / 2, screenHeight / 2 - 120, 30, LIGHTGRAY);
-		createProText("Player 2 - UP/DOWN", screenWidth / 2, screenHeight / 2 - 80, 30, LIGHTGRAY);
+		drawProText("Movement", screenWidth / 2, screenHeight / 2 - 200, subTitleFontSize, titleTextColor);
+		drawProText("Player 1 - W/S", screenWidth / 2, screenHeight / 2 - 120, textFontSize, textColor);
+		drawProText("Player 2 - UP/DOWN", screenWidth / 2, screenHeight / 2 - 80, textFontSize, textColor);
 
-		createProText("Rules", screenWidth / 2, screenHeight / 2, 60, SKYBLUE);
-		createProText("Control your paddle by moving it vertically", screenWidth / 2, screenHeight / 2 + 70, 30, LIGHTGRAY);
-		createProText("and use it to hit a ball back and forth.", screenWidth / 2, screenHeight / 2 + 100, 30, LIGHTGRAY);
-		createProText("Score 5 points before the opponent..", screenWidth / 2, screenHeight / 2 + 130, 30, LIGHTGRAY);
-		createProText("Points are earned when one fails to return the ball.", screenWidth / 2, screenHeight / 2 + 160, 30, LIGHTGRAY);
+		drawProText("Rules", screenWidth / 2, screenHeight / 2, subTitleFontSize, titleTextColor);
+		drawProText("Control your paddle by moving it vertically", screenWidth / 2, screenHeight / 2 + 70, textFontSize, textColor);
+		drawProText("and use it to hit the ball back and forth.", screenWidth / 2, screenHeight / 2 + 100, textFontSize, textColor);
+		drawProText("Score 5 points before the opponent..", screenWidth / 2, screenHeight / 2 + 130, textFontSize, textColor);
+		drawProText("Points are earned when one fails to return the ball.", screenWidth / 2, screenHeight / 2 + 160, textFontSize, textColor);
 
 		createButton("Back", controlsButton, controlsButton.linesColor, controlsButton.textColor, controlsButton.fontSize);
 	}

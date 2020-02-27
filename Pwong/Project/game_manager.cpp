@@ -13,7 +13,13 @@ namespace GameManager{
 	static void draw();
 	static void deInit();
 
-	Rectangle gameEdge;
+	static struct GameEdge {
+		Rectangle rec;
+		int linesThick;
+		Color color;
+	};
+
+	static GameEdge gameEdge;
 	
 	Scene actualScene = MainMenu;
 	Color backColor = WHITE;
@@ -36,10 +42,12 @@ namespace GameManager{
 
 		//InitAudioDevice();
 		
-		gameEdge.width = screenWidth;
-		gameEdge.height = screenHeight;
-		gameEdge.x = screenWidth / 2 - gameEdge.width / 2;
-		gameEdge.y = screenHeight / 2 - gameEdge.height / 2;
+		gameEdge.rec.width = screenWidth;
+		gameEdge.rec.height = screenHeight;
+		gameEdge.rec.x = screenWidth / 2 - gameEdge.rec.width / 2;
+		gameEdge.rec.y = screenHeight / 2 - gameEdge.rec.height / 2;
+		gameEdge.linesThick = 5;
+		gameEdge.color = LIGHTGRAY;
 
 		SetExitKey(KEY_F4);
 
@@ -85,7 +93,7 @@ namespace GameManager{
 
 		ClearBackground(backColor);
 
-		DrawRectangleLinesEx(gameEdge, 5, LIGHTGRAY);
+		DrawRectangleLinesEx(gameEdge.rec, gameEdge.linesThick, gameEdge.color);
 
 		switch (actualScene)
 		{

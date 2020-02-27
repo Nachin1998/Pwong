@@ -26,7 +26,7 @@ using namespace GameManager;
 			titleColor);
 	}
 
-	void createProText(const char *text, float posX, float posY, float fontSize, Color textColor) {
+	void drawProText(const char *text, float posX, float posY, float fontSize, Color textColor) {
 
 		DrawText(text, posX - MeasureText(text, fontSize) / 2, posY, fontSize, textColor);
 	}

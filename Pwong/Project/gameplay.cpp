@@ -13,6 +13,7 @@ using namespace GameManager;
 	};
 
 	static MapDivision mapDivision;
+
 	static void ballUpdate();
 	static void collisionManager(Rectangle &playerRec);
 	static void gameLogic(Player::Player &player);
@@ -113,6 +114,7 @@ using namespace GameManager;
 		{
 			Player::draw();
 			DrawCircleV(ball.pos, ball.radius, ball.color);
+			
 		}
 		else
 		{

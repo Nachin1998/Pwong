@@ -17,7 +17,7 @@ namespace UI {
 
 	void createTitle(const char *title, Button button, Color edgesColor, Color titleColor, float fontSize);
 	void createButton(const char *text, Button button, Color edgesColor, Color titleColor, float fontSize);
-	void createProText(const char *text, float posX, float posY, float fontSize, Color textColor);
+	void drawProText(const char *text, float posX, float posY, float fontSize, Color textColor);
 }
 }
 
