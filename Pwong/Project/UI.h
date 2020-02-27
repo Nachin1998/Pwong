@@ -10,13 +10,13 @@ namespace UI {
 		Rectangle rec;
 		float lineThickness;
 		float fontSize;
-		Color linesColor;
+		Color edgesColor;
 		Color textColor;
 		Color buttonColor;
 	};
 
-	void createTitle(const char *title, Button button, Color edgesColor, Color titleColor, float fontSize);
-	void createButton(const char *text, Button button, Color edgesColor, Color titleColor, float fontSize);
+	void createTitle(const char *title, Button button, Color edgesColor, Color textColor, float fontSize);
+	void createButton(const char *text, Button button);
 	void drawProText(const char *text, float posX, float posY, float fontSize, Color textColor);
 }
 }

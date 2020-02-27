@@ -4,6 +4,7 @@
 
 #include "main_menu.h"
 #include "gameplay.h"
+#include "game_over.h"
 
 namespace MyGame {
 namespace GameManager{
@@ -21,7 +22,9 @@ namespace GameManager{
 
 	static GameEdge gameEdge;
 	
-	Scene actualScene = MainMenu;
+	Scene actualScene = GameOver;
+	//Scene actualScene = MainMenu;
+
 	Color backColor = WHITE;
 
 	void runGame() {
@@ -53,6 +56,7 @@ namespace GameManager{
 
 		Gameplay::init();
 		MainMenu::init();
+		GameOver::init();
 		//All inits
 	}
 
@@ -76,6 +80,10 @@ namespace GameManager{
 
 		case Game:
 			Gameplay::update();
+			break;
+
+		case GameOver:
+			GameOver::update();
 			break;
 
 		case Credits:
@@ -103,6 +111,10 @@ namespace GameManager{
 
 		case Game:
 			Gameplay::draw();
+			break;
+
+		case GameOver:
+			GameOver::draw();
 			break;
 
 		case Credits:

@@ -40,7 +40,7 @@ using namespace UI;
 		mainTitle.rec.y = (screenHeight / 2 - 250) - mainTitle.rec.height / 2;
 		mainTitle.lineThickness = 5;
 		mainTitle.fontSize = 100;
-		mainTitle.linesColor = LIGHTGRAY;
+		mainTitle.edgesColor = LIGHTGRAY;
 		mainTitle.textColor = WHITE;
 		mainTitle.buttonColor = titleTextColor;
 
@@ -52,7 +52,7 @@ using namespace UI;
 			menuButtons[i].rec.y = (screenHeight / 2 - 50 + (distanceBetweenButtons * i)) - menuButtons[i].rec.height / 2;
 			menuButtons[i].lineThickness = 3;
 			menuButtons[i].fontSize = 40;
-			menuButtons[i].linesColor = SKYBLUE;
+			menuButtons[i].edgesColor = SKYBLUE;
 			menuButtons[i].textColor = SKYBLUE;
 			menuButtons[i].buttonColor = BLANK;
 		}
@@ -111,12 +111,12 @@ using namespace UI;
 
 		if (!controlsActive)
 		{
-			createButton("PWONG", mainTitle, mainTitle.linesColor, mainTitle.textColor, mainTitle.fontSize);
+			createButton("PWONG", mainTitle);
 
-			createButton("Start", menuButtons[0], menuButtons[0].linesColor, menuButtons[0].textColor, menuButtons[0].fontSize);
-			createButton("Controls", menuButtons[1], menuButtons[1].linesColor, menuButtons[1].textColor, menuButtons[1].fontSize);
-			createButton("Credits", menuButtons[2], menuButtons[2].linesColor, menuButtons[2].textColor, menuButtons[2].fontSize);
-			createButton("Exit", menuButtons[3], menuButtons[3].linesColor, menuButtons[3].textColor, menuButtons[3].fontSize);
+			createButton("Start", menuButtons[0]);
+			createButton("Controls", menuButtons[1]);
+			createButton("Credits", menuButtons[2]);
+			createButton("Exit", menuButtons[3]);
 		}
 		else
 		{
@@ -132,7 +132,7 @@ using namespace UI;
 		controlsTitle.rec.y = (screenHeight / 2 - 300) - controlsTitle.rec.height / 2;
 		controlsTitle.lineThickness = 5;
 		controlsTitle.fontSize = 70;
-		controlsTitle.linesColor = LIGHTGRAY;
+		controlsTitle.edgesColor = LIGHTGRAY;
 		controlsTitle.textColor = WHITE;
 		controlsTitle.buttonColor = SKYBLUE;
 
@@ -142,7 +142,7 @@ using namespace UI;
 		controlsButton.rec.y = (screenHeight / 2 + 300) - controlsButton.rec.height / 2;
 		controlsButton.lineThickness = 5;
 		controlsButton.fontSize = 30;
-		controlsButton.linesColor = SKYBLUE;
+		controlsButton.edgesColor = SKYBLUE;
 		controlsButton.textColor = SKYBLUE;
 		controlsButton.buttonColor = BLANK;
 	}
@@ -166,7 +166,7 @@ using namespace UI;
 
 	void drawControls() {
 
-		createButton("Controls", controlsTitle, controlsTitle.linesColor, controlsTitle.textColor, controlsTitle.fontSize);
+		createButton("Controls", controlsTitle);
 
 		drawProText("Movement", screenWidth / 2, screenHeight / 2 - 200, subTitleFontSize, titleTextColor);
 		drawProText("Player 1 - W/S", screenWidth / 2, screenHeight / 2 - 120, textFontSize, textColor);
@@ -178,7 +178,7 @@ using namespace UI;
 		drawProText("Score 5 points before the opponent..", screenWidth / 2, screenHeight / 2 + 130, textFontSize, textColor);
 		drawProText("Points are earned when one fails to return the ball.", screenWidth / 2, screenHeight / 2 + 160, textFontSize, textColor);
 
-		createButton("Back", controlsButton, controlsButton.linesColor, controlsButton.textColor, controlsButton.fontSize);
+		createButton("Back", controlsButton);
 	}
 }
 }
