@@ -1,8 +1,8 @@
 #include "gameplay.h"
 
-#include "game_manager.h"
-#include "player.h"
-#include "UI.h"
+#include "game_manager\game_manager.h"
+#include "player\player.h"
+#include "utility\UI.h"
 
 namespace MyGame {
 namespace Gameplay {
@@ -34,16 +34,16 @@ using namespace GameManager;
 		ball.pos.x = screenWidth / 2;
 		ball.pos.y = screenHeight / 2;
 		ball.radius = 10.0f;
-		ball.movementSpeed.x = 250.0f;
-		ball.movementSpeed.y = 250.0f;
+		ball.movementSpeed.x = 400.0f;
+		ball.movementSpeed.y = 400.0f;
 		ball.active = false;
-		ball.color = SKYBLUE;
+		ball.color = LIGHTGRAY;
 
 		mapDivision.rec.width = 10;
 		mapDivision.rec.height = screenHeight;
 		mapDivision.rec.x = screenWidth / 2 - mapDivision.rec.width / 2;
 		mapDivision.rec.y = screenHeight / 2 - mapDivision.rec.height / 2;
-		mapDivision.color = LIGHTGRAY;
+		mapDivision.color = SKYBLUE;
 
 		Player::init();
 	}
@@ -74,6 +74,11 @@ using namespace GameManager;
 			{
 				Player::update();
 				ballUpdate();
+				SetMusicVolume(pongMusic, 1.0f);
+			}
+			else
+			{
+				SetMusicVolume(pongMusic, 0.3f);
 			}
 
 			collisionManager(Player::player1.rec);
@@ -107,9 +112,9 @@ using namespace GameManager;
 
 		if (startGame && !pause)
 		{
-			DrawText(FormatText("%i", Player::player1.score), screenWidth / 2 - MeasureText("0", 200) / 2 - 90, screenHeight / 2 - 92, 200, LIGHTGRAY);
+			DrawText(FormatText("%i", Player::player1.score), screenWidth / 2 - MeasureText("0", 200) / 2 - 90, screenHeight / 2 - 92, 200, SKYBLUE);
 			DrawRectangleRec(mapDivision.rec, mapDivision.color);
-			DrawText(FormatText("%i", Player::player2.score), screenWidth / 2 - MeasureText("0", 200) / 2 + 90, screenHeight / 2 - 92, 200, LIGHTGRAY);
+			DrawText(FormatText("%i", Player::player2.score), screenWidth / 2 - MeasureText("0", 200) / 2 + 90, screenHeight / 2 - 92, 200, SKYBLUE);
 		}
 
 		if (!pause)
@@ -123,8 +128,8 @@ using namespace GameManager;
 			UI::drawProText("Paused", screenWidth / 2, screenHeight / 2 - 250, 120, LIGHTGRAY);
 			UI::drawProText("Press ´P´ to continue", screenWidth / 2, screenHeight / 2 + 150, 50, LIGHTGRAY);
 
-			DrawText(FormatText("%i", Player::player1.score), screenWidth / 2 - MeasureText("0", 200) / 2 - 90, screenHeight / 2 - 92, 200, RED);
-			DrawText(FormatText("%i", Player::player2.score), screenWidth / 2 - MeasureText("0", 200) / 2 + 90, screenHeight / 2 - 92, 200, GREEN);
+			DrawText(FormatText("%i", Player::player1.score), screenWidth / 2 - MeasureText("0", 200) / 2 - 90, screenHeight / 2 - 92, 200, Player::player1.color);
+			DrawText(FormatText("%i", Player::player2.score), screenWidth / 2 - MeasureText("0", 200) / 2 + 90, screenHeight / 2 - 92, 200, Player::player2.color);
 
 			DrawCircleGradient(ball.pos.x, ball.pos.y, ball.radius, BLACK, WHITE);
 			DrawRectangleLinesEx(Player::player1.rec, 3, Player::player1.color);

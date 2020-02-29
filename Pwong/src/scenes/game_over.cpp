@@ -2,10 +2,10 @@
 
 #include <iostream>
 
-#include "game_manager.h"
-#include "gameplay.h"
-#include "player.h"
-#include "UI.h"
+#include "game_manager\game_manager.h"
+#include "scenes\gameplay.h"
+#include "player\player.h"
+#include "utility\UI.h"
 
 namespace MyGame {
 namespace GameOver {

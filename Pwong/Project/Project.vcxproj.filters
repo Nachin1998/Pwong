@@ -5,10 +5,6 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="entities">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
     <Filter Include="scenes">
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
@@ -16,46 +12,50 @@
     <Filter Include="utility">
       <UniqueIdentifier>{bd4d1b76-4c76-46f2-bb47-af69c8da9b11}</UniqueIdentifier>
     </Filter>
+    <Filter Include="player">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="game_manager.cpp">
+    <ClInclude Include="..\src\game_manager\game_manager.h">
       <Filter>game_manager</Filter>
-    </ClCompile>
-    <ClCompile Include="player.cpp">
-      <Filter>entities</Filter>
-    </ClCompile>
-    <ClCompile Include="gameplay.cpp">
+    </ClInclude>
+    <ClInclude Include="..\src\player\player.h">
+      <Filter>player</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\scenes\gameplay.h">
       <Filter>scenes</Filter>
-    </ClCompile>
-    <ClCompile Include="game_over.cpp">
+    </ClInclude>
+    <ClInclude Include="..\src\scenes\main_menu.h">
       <Filter>scenes</Filter>
-    </ClCompile>
-    <ClCompile Include="UI.cpp">
+    </ClInclude>
+    <ClInclude Include="..\src\scenes\game_over.h">
+      <Filter>scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\utility\UI.h">
       <Filter>utility</Filter>
-    </ClCompile>
-    <ClCompile Include="main_menu.cpp">
-      <Filter>scenes</Filter>
-    </ClCompile>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="game_manager.h">
+    <ClCompile Include="..\src\game_manager\game_manager.cpp">
       <Filter>game_manager</Filter>
-    </ClInclude>
-    <ClInclude Include="player.h">
-      <Filter>entities</Filter>
-    </ClInclude>
-    <ClInclude Include="gameplay.h">
+    </ClCompile>
+    <ClCompile Include="..\src\player\player.cpp">
+      <Filter>player</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\scenes\main_menu.cpp">
       <Filter>scenes</Filter>
-    </ClInclude>
-    <ClInclude Include="game_over.h">
+    </ClCompile>
+    <ClCompile Include="..\src\scenes\game_over.cpp">
       <Filter>scenes</Filter>
-    </ClInclude>
-    <ClInclude Include="UI.h">
+    </ClCompile>
+    <ClCompile Include="..\src\scenes\gameplay.cpp">
+      <Filter>scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\utility\UI.cpp">
       <Filter>utility</Filter>
-    </ClInclude>
-    <ClInclude Include="main_menu.h">
-      <Filter>scenes</Filter>
-    </ClInclude>
+    </ClCompile>
+    <ClCompile Include="..\src\main.cpp" />
   </ItemGroup>
 </Project>

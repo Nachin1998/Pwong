@@ -2,9 +2,9 @@
 
 #include <iostream>
 
-#include "main_menu.h"
-#include "gameplay.h"
-#include "game_over.h"
+#include "scenes\main_menu.h"
+#include "scenes\gameplay.h"
+#include "scenes\game_over.h"
 
 namespace MyGame {
 namespace GameManager{
@@ -23,17 +23,20 @@ namespace GameManager{
 	static GameEdge gameEdge;
 	
 	//Scene actualScene = GameOver;
+
+	bool closeGame = false;
+
 	Scene actualScene = MainMenu;
 
 	Color backColor = WHITE;
-	
+
 	Music pongMusic;
 
 	void runGame() {
 
 		init();
 
-		while (!WindowShouldClose())
+		while (!WindowShouldClose() && !closeGame)
 		{
 			update();
 			draw();
@@ -53,7 +56,7 @@ namespace GameManager{
 		gameEdge.rec.x = screenWidth / 2 - gameEdge.rec.width / 2;
 		gameEdge.rec.y = screenHeight / 2 - gameEdge.rec.height / 2;
 		gameEdge.linesThick = 5;
-		gameEdge.color = LIGHTGRAY;
+		gameEdge.color = SKYBLUE;
 
 		SetExitKey(KEY_F4);
 
@@ -62,11 +65,12 @@ namespace GameManager{
 		GameOver::init();
 
 		PlayMusicStream(pongMusic);
+		SetMusicVolume(pongMusic, 1.0f);
 		//All inits
 	}
 
 	void update() {
-		//UpdateMusicStream(musica);
+		UpdateMusicStream(pongMusic);
 
 		if (Gameplay::pause) 
 		{

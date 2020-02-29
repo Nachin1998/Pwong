@@ -2,8 +2,8 @@
 
 #include <iostream>
 
-#include "game_manager.h"
-#include "UI.h"
+#include "game_manager\game_manager.h"
+#include "utility\UI.h"
 
 namespace MyGame {
 namespace MainMenu {
@@ -85,7 +85,7 @@ namespace MainMenu {
 							break;
 
 						case 3:
-							CloseWindow();
+							closeGame = true;
 							break;
 
 						default:
