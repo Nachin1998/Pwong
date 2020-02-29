@@ -9,7 +9,6 @@
 
 namespace MyGame {
 namespace GameOver {
-using namespace UI;
 using namespace GameManager;
 
 	static const int maxButtons = 3;
@@ -17,7 +16,7 @@ using namespace GameManager;
 	static int buttonXdistance = 400;
 	static float scoreDistanceFromX = 120.0f;
 
-	static Button gameOverButton[maxButtons];
+	static UI::Button gameOverButton[maxButtons];
 
 	void init() {
 
@@ -78,20 +77,20 @@ using namespace GameManager;
 
 		if (Player::player1.score == Gameplay::maxScore)
 		{
-			drawProText("Player 1 won!", screenWidth / 2, screenHeight / 2 - 150, 60, SKYBLUE);
+			UI::drawProText("Player 1 won!", screenWidth / 2, screenHeight / 2 - 300, 80, SKYBLUE);
 		}
 		else if (Player::player2.score == Gameplay::maxScore)
 		{
-			drawProText("Player 2 won!", screenWidth / 2, screenHeight / 2 - 150, 60, SKYBLUE);
+			UI::drawProText("Player 2 won!", screenWidth / 2, screenHeight / 2 - 300, 80, SKYBLUE);
 		}
 
-		DrawText(FormatText("%i", Player::player1.score), screenWidth / 2 - MeasureText("0", 200) / 2 - scoreDistanceFromX, screenHeight / 2 - 40, 200, SKYBLUE);
-		drawProText("|", screenWidth / 2, screenHeight / 2 - 60, 250, SKYBLUE);
-		DrawText(FormatText("%i", Player::player2.score), screenWidth / 2 - MeasureText("0", 200) / 2 + scoreDistanceFromX, screenHeight / 2 - 40, 200, SKYBLUE);
+		DrawText(FormatText("%i", Player::player1.score), screenWidth / 2 - MeasureText("0", 200) / 2 - scoreDistanceFromX, screenHeight / 2 - 100, 200, SKYBLUE);
+		UI::drawProText("|", screenWidth / 2, screenHeight / 2 - 120, 250, SKYBLUE);
+		DrawText(FormatText("%i", Player::player2.score), screenWidth / 2 - MeasureText("0", 200) / 2 + scoreDistanceFromX, screenHeight / 2 - 100, 200, SKYBLUE);
 
-		createButton("Play Again", gameOverButton[0]);
-		createButton("Main Menu", gameOverButton[1]);
-		createButton("Credits", gameOverButton[2]);
+		UI::createButton("Play Again", gameOverButton[0]);
+		UI::createButton("Main Menu", gameOverButton[1]);
+		UI::createButton("Credits", gameOverButton[2]);
 	}
 }
 }

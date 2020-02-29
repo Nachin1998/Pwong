@@ -37,6 +37,9 @@
     <ClCompile Include="main_menu.cpp">
       <Filter>scenes</Filter>
     </ClCompile>
+    <ClCompile Include="audio.cpp">
+      <Filter>utility</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="game_manager.h">
@@ -56,6 +59,9 @@
     </ClInclude>
     <ClInclude Include="main_menu.h">
       <Filter>scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="audio.h">
+      <Filter>utility</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

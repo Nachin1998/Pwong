@@ -7,17 +7,16 @@
 
 namespace MyGame {
 namespace MainMenu {
-using namespace GameManager;
-using namespace UI;
+	using namespace GameManager;
 
 	static void initControls();
 	static void updateControls();
 	static void drawControls();
-	
-	static Button mainTitle;
-	static Button menuButtons[maxButtons];
-	static Button controlsTitle;
-	static Button controlsButton;
+
+	static UI::Button mainTitle;
+	static UI::Button menuButtons[maxButtons];
+	static UI::Button controlsTitle;
+	static UI::Button controlsButton;
 
 	static int subTitleFontSize = 60;
 	static int textFontSize = 30;
@@ -63,7 +62,7 @@ using namespace UI;
 	void update() {
 
 		if (!controlsActive) {
-			for (int i = 0; i < maxButtons; i++) 
+			for (int i = 0; i < maxButtons; i++)
 			{
 				if (CheckCollisionPointRec(GetMousePosition(), menuButtons[i].rec))
 				{
@@ -105,7 +104,7 @@ using namespace UI;
 		{
 			updateControls();
 		}
-		
+
 	}
 
 	void draw() {
@@ -169,17 +168,17 @@ using namespace UI;
 
 		createButton("Controls", controlsTitle);
 
-		drawProText("Movement", screenWidth / 2, screenHeight / 2 - 200, subTitleFontSize, titleTextColor);
-		drawProText("Player 1 - W/S", screenWidth / 2, screenHeight / 2 - 120, textFontSize, textColor);
-		drawProText("Player 2 - UP/DOWN", screenWidth / 2, screenHeight / 2 - 80, textFontSize, textColor);
+		UI::drawProText("Movement", screenWidth / 2, screenHeight / 2 - 200, subTitleFontSize, titleTextColor);
+		UI::drawProText("Player 1 - W/S", screenWidth / 2, screenHeight / 2 - 120, textFontSize, textColor);
+		UI::drawProText("Player 2 - UP/DOWN", screenWidth / 2, screenHeight / 2 - 80, textFontSize, textColor);
 
-		drawProText("Rules", screenWidth / 2, screenHeight / 2, subTitleFontSize, titleTextColor);
-		drawProText("Control your paddle by moving it vertically", screenWidth / 2, screenHeight / 2 + 70, textFontSize, textColor);
-		drawProText("and use it to hit the ball back and forth.", screenWidth / 2, screenHeight / 2 + 100, textFontSize, textColor);
-		drawProText("Score 5 points before the opponent.", screenWidth / 2, screenHeight / 2 + 130, textFontSize, textColor);
-		drawProText("Points are earned when one fails to return the ball.", screenWidth / 2, screenHeight / 2 + 160, textFontSize, textColor);
+		UI::drawProText("Rules", screenWidth / 2, screenHeight / 2, subTitleFontSize, titleTextColor);
+		UI::drawProText("Control your paddle by moving it vertically", screenWidth / 2, screenHeight / 2 + 70, textFontSize, textColor);
+		UI::drawProText("and use it to hit the ball back and forth.", screenWidth / 2, screenHeight / 2 + 100, textFontSize, textColor);
+		UI::drawProText("Score 5 points before the opponent.", screenWidth / 2, screenHeight / 2 + 130, textFontSize, textColor);
+		UI::drawProText("Points are earned when one fails to return the ball.", screenWidth / 2, screenHeight / 2 + 160, textFontSize, textColor);
 
-		createButton("Back", controlsButton);
+		UI::createButton("Back", controlsButton);
 	}
 }
 }

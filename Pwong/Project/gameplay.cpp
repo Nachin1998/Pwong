@@ -1,7 +1,8 @@
 #include "gameplay.h"
 
-#include "player.h"
 #include "game_manager.h"
+#include "player.h"
+#include "UI.h"
 
 namespace MyGame {
 namespace Gameplay {
@@ -32,13 +33,13 @@ using namespace GameManager;
 
 		ball.pos.x = screenWidth / 2;
 		ball.pos.y = screenHeight / 2;
-		ball.radius = 8.0f;
+		ball.radius = 10.0f;
 		ball.movementSpeed.x = 250.0f;
 		ball.movementSpeed.y = 250.0f;
 		ball.active = false;
 		ball.color = SKYBLUE;
 
-		mapDivision.rec.width = 15;
+		mapDivision.rec.width = 10;
 		mapDivision.rec.height = screenHeight;
 		mapDivision.rec.x = screenWidth / 2 - mapDivision.rec.width / 2;
 		mapDivision.rec.y = screenHeight / 2 - mapDivision.rec.height / 2;
@@ -49,9 +50,10 @@ using namespace GameManager;
 
 	void update() {
 
-		if (IsKeyPressed(KEY_ENTER))
+		if (IsKeyPressed(KEY_SPACE))
 		{
 			startGame = true;
+			ball.active = true;
 		}
 
 		if (startGame)
@@ -99,8 +101,8 @@ using namespace GameManager;
 		
 		if (!startGame)
 		{
-			DrawText("Press ´Enter´", screenWidth / 2 - MeasureText("Press ´Enter´", 80) / 2, screenHeight / 2 - 50, 80, LIGHTGRAY);
-			DrawText("to start the game", screenWidth / 2 - MeasureText("to start the game", 80) / 2, screenHeight / 2 + 30, 80, LIGHTGRAY);
+			UI::drawProText("Press ´Space´", screenWidth / 2, screenHeight / 2 - 50, 80, LIGHTGRAY);
+			UI::drawProText("to start the game", screenWidth / 2, screenHeight / 2 + 30, 80, LIGHTGRAY);
 		}
 
 		if (startGame && !pause)
@@ -118,9 +120,9 @@ using namespace GameManager;
 		}
 		else
 		{
-			DrawText("Paused", screenWidth / 2 - MeasureText("Paused", 80) / 2, screenHeight / 2 - 50, 80, LIGHTGRAY);
-			DrawText("Press ´Enter´ to continue", screenWidth / 2 - MeasureText("Press ´Enter´ to continue", 40) / 2, screenHeight / 2 + 30, 40, LIGHTGRAY);
-			
+			UI::drawProText("Paused", screenWidth / 2, screenHeight / 2 - 250, 120, LIGHTGRAY);
+			UI::drawProText("Press ´P´ to continue", screenWidth / 2, screenHeight / 2 + 150, 50, LIGHTGRAY);
+
 			DrawText(FormatText("%i", Player::player1.score), screenWidth / 2 - MeasureText("0", 200) / 2 - 90, screenHeight / 2 - 92, 200, RED);
 			DrawText(FormatText("%i", Player::player2.score), screenWidth / 2 - MeasureText("0", 200) / 2 + 90, screenHeight / 2 - 92, 200, GREEN);
 
@@ -131,15 +133,6 @@ using namespace GameManager;
 	}
 
 	void ballUpdate() {
-
-		if (!startGame)
-		{
-			ball.active = false;
-		}
-		else
-		{
-			ball.active = true;
-		}
 
 		if (ball.active)
 		{
@@ -171,8 +164,7 @@ using namespace GameManager;
 
 	void gameLogic(Player::Player &player) {
 
-		ball.pos.y = screenHeight / 2;
-		ball.pos.x = screenWidth / 2;
+		ball.active = false;
 		player.score += 1;
 
 		if (player.score == maxScore) 

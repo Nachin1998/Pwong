@@ -25,7 +25,7 @@ using namespace GameManager;
 		player1.rec.height = playerHeight;
 		player1.rec.x = playerStartPosition - player1.rec.width / 2;
 		player1.rec.y = screenHeight / 2 - player1.rec.height / 2;
-		player1.score = 0;
+		player1.score = 5;
 		player1.color = RED;
 
 		player2.rec.width = playerWidth;
