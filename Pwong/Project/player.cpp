@@ -53,7 +53,7 @@ using namespace GameManager;
 
 	void playerMovement(Rectangle &playerRec, int keyUp, int keyDown) {
 
-		if (playerRec.y  > mapLimit)
+		if (playerRec.y > mapLimit)
 		{
 			if (IsKeyDown(keyUp))
 			{

@@ -63,7 +63,8 @@ using namespace UI;
 	void update() {
 
 		if (!controlsActive) {
-			for (int i = 0; i < maxButtons; i++) {
+			for (int i = 0; i < maxButtons; i++) 
+			{
 				if (CheckCollisionPointRec(GetMousePosition(), menuButtons[i].rec))
 				{
 					menuButtons[i].buttonColor = mouseOverButton;
@@ -175,7 +176,7 @@ using namespace UI;
 		drawProText("Rules", screenWidth / 2, screenHeight / 2, subTitleFontSize, titleTextColor);
 		drawProText("Control your paddle by moving it vertically", screenWidth / 2, screenHeight / 2 + 70, textFontSize, textColor);
 		drawProText("and use it to hit the ball back and forth.", screenWidth / 2, screenHeight / 2 + 100, textFontSize, textColor);
-		drawProText("Score 5 points before the opponent..", screenWidth / 2, screenHeight / 2 + 130, textFontSize, textColor);
+		drawProText("Score 5 points before the opponent.", screenWidth / 2, screenHeight / 2 + 130, textFontSize, textColor);
 		drawProText("Points are earned when one fails to return the ball.", screenWidth / 2, screenHeight / 2 + 160, textFontSize, textColor);
 
 		createButton("Back", controlsButton);

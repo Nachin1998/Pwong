@@ -16,6 +16,8 @@ namespace Gameplay {
 
 	extern Ball ball;
 
+	const int maxScore = 5;
+
 	extern bool pause;
 	extern bool startGame;
 

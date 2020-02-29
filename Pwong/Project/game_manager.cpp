@@ -14,7 +14,7 @@ namespace GameManager{
 	static void draw();
 	static void deInit();
 
-	static struct GameEdge {
+	struct GameEdge {
 		Rectangle rec;
 		int linesThick;
 		Color color;
@@ -22,8 +22,8 @@ namespace GameManager{
 
 	static GameEdge gameEdge;
 	
-	Scene actualScene = GameOver;
-	//Scene actualScene = MainMenu;
+	//Scene actualScene = GameOver;
+	Scene actualScene = MainMenu;
 
 	Color backColor = WHITE;
 

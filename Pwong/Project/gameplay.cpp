@@ -7,7 +7,7 @@ namespace MyGame {
 namespace Gameplay {
 using namespace GameManager;
 
-	static struct MapDivision{
+	struct MapDivision{
 		Rectangle rec;
 		Color color;
 	};
@@ -175,7 +175,7 @@ using namespace GameManager;
 		ball.pos.x = screenWidth / 2;
 		player.score += 1;
 
-		if (player.score == 5) 
+		if (player.score == maxScore) 
 		{
 			endGame = true;
 		}
