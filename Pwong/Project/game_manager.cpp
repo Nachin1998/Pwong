@@ -22,8 +22,8 @@ namespace GameManager{
 
 	static GameEdge gameEdge;
 	
-	Scene actualScene = GameOver;
-	//Scene actualScene = MainMenu;
+	//Scene actualScene = GameOver;
+	Scene actualScene = MainMenu;
 
 	Color backColor = WHITE;
 	
@@ -46,7 +46,7 @@ namespace GameManager{
 		InitWindow(screenWidth, screenHeight, "Pwong - by Ignacio Fernandez Lemos");
 		InitAudioDevice();
 
-		//pongMusic = LoadMusicStream("BaseMusic.ogg");
+		pongMusic = LoadMusicStream("res/music/BaseMusic.ogg");
 		
 		gameEdge.rec.width = screenWidth;
 		gameEdge.rec.height = screenHeight;
@@ -62,7 +62,6 @@ namespace GameManager{
 		GameOver::init();
 
 		PlayMusicStream(pongMusic);
-		SetMusicVolume(pongMusic, 1.0f);
 		//All inits
 	}
 

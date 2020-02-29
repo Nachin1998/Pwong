@@ -85,7 +85,7 @@ namespace MainMenu {
 							break;
 
 						case 3:
-							std::exit(0);
+							CloseWindow();
 							break;
 
 						default:
