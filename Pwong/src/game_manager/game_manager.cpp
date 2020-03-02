@@ -53,7 +53,7 @@ namespace GameManager{
 		gameEdge.rec.height = screenHeight;
 		gameEdge.rec.x = screenWidth / 2 - gameEdge.rec.width / 2;
 		gameEdge.rec.y = screenHeight / 2 - gameEdge.rec.height / 2;
-		gameEdge.linesThick = 5;
+		gameEdge.linesThick = 15;
 		gameEdge.color = SKYBLUE;
 
 		SetExitKey(KEY_F4);

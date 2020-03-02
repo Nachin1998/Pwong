@@ -19,10 +19,12 @@ using namespace GameManager;
 	static void collisionManager(Rectangle &playerRec);
 	static void gameLogic(Player::Player &player);
 
-	static Sound hitSound;
+	static float mapLimit = 15.0f;
 	bool startGame = false;
 	bool endGame = false;
 	bool pause = false;
+
+	static Sound hitSound;
 
 	Ball ball;
 
@@ -88,12 +90,12 @@ using namespace GameManager;
 			collisionManager(Player::player1.rec);
 			collisionManager(Player::player2.rec);
 
-			if (ball.pos.x + ball.radius + 3 > screenWidth)
+			if (ball.pos.x + ball.radius + mapLimit > screenWidth)
 			{
 				gameLogic(Player::player1);
 			}
 
-			if (ball.pos.x - ball.radius - 3 < 0)
+			if (ball.pos.x - ball.radius - mapLimit < 0)
 			{
 				gameLogic(Player::player2);
 			}
@@ -159,7 +161,7 @@ using namespace GameManager;
 			ball.pos.y = screenHeight / 2;
 		}
 
-		if (ball.pos.y - ball.radius - 3 < 0 || ball.pos.y + ball.radius + 3 > screenHeight)
+		if (ball.pos.y - ball.radius - mapLimit < 0 || ball.pos.y + ball.radius + mapLimit > screenHeight)
 		{
 			ball.movementSpeed.y *= -1;
 		}

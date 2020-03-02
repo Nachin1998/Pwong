@@ -12,7 +12,7 @@ using namespace GameManager;
 	static float playerHeight = 150.0f;
 	static int playerSpeed = 300;
 	static int playerStartPosition = 80;
-	static int mapLimit = 5;
+	static int mapLimit = 15;
 	static Color playerEdges = LIGHTGRAY;
 	static int playerEdgesThickness = 3;
 
