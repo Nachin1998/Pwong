@@ -21,8 +21,6 @@ namespace GameManager{
 	};
 
 	static GameEdge gameEdge;
-	
-	//Scene actualScene = GameOver;
 
 	bool closeGame = false;
 
@@ -60,13 +58,12 @@ namespace GameManager{
 
 		SetExitKey(KEY_F4);
 
-		Gameplay::init();
 		MainMenu::init();
+		Gameplay::init();
 		GameOver::init();
 
 		PlayMusicStream(pongMusic);
 		SetMusicVolume(pongMusic, 1.0f);
-		//All inits
 	}
 
 	void update() {
@@ -140,6 +137,7 @@ namespace GameManager{
 	void deInit() {
 
 		UnloadMusicStream(pongMusic);
+		Gameplay::deInit();
 		CloseAudioDevice();
 		CloseWindow();
 	}

@@ -19,6 +19,7 @@ using namespace GameManager;
 	static void collisionManager(Rectangle &playerRec);
 	static void gameLogic(Player::Player &player);
 
+	static Sound hitSound;
 	bool startGame = false;
 	bool endGame = false;
 	bool pause = false;
@@ -44,6 +45,9 @@ using namespace GameManager;
 		mapDivision.rec.x = screenWidth / 2 - mapDivision.rec.width / 2;
 		mapDivision.rec.y = screenHeight / 2 - mapDivision.rec.height / 2;
 		mapDivision.color = SKYBLUE;
+
+		hitSound = LoadSound("res/sounds/hitSound.ogg");
+		SetSoundVolume(hitSound, 1.0f);
 
 		Player::init();
 	}
@@ -137,6 +141,11 @@ using namespace GameManager;
 		}
 	}
 
+	void deInit() {
+
+		UnloadSound(hitSound);
+	}
+
 	void ballUpdate() {
 
 		if (ball.active)
@@ -160,6 +169,8 @@ using namespace GameManager;
 
 		if (CheckCollisionCircleRec(ball.pos, ball.radius, playerRec))
 		{
+			PlaySound(hitSound);
+
 			if ((ball.pos.x < playerRec.x || ball.pos.x > playerRec.x) && (ball.pos.y < playerRec.y || ball.pos.y > playerRec.y))
 			{
 				ball.movementSpeed.x *= -1;

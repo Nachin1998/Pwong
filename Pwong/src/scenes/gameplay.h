@@ -24,6 +24,7 @@ namespace Gameplay {
 	void init();
 	void update();
 	void draw();
+	void deInit();
 }
 }
 
