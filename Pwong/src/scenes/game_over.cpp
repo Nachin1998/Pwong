@@ -2,7 +2,7 @@
 
 #include <iostream>
 
-#include "game_manager\game_manager.h"
+#include "managers\game_manager.h"
 #include "scenes\gameplay.h"
 #include "player\player.h"
 #include "utility\UI.h"

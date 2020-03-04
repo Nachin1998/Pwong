@@ -4,7 +4,7 @@
 namespace MyGame {
 namespace MainMenu {
 
-	const int maxButtons = 4;
+	const int maxButtons = 5;
 
 	void init();
 	void update();

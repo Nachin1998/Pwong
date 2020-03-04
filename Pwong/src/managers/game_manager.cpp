@@ -2,7 +2,7 @@
 
 #include <iostream>
 
-#include "scenes\main_menu_manager.h"
+#include "managers\main_menu_manager.h"
 #include "scenes\gameplay.h"
 #include "scenes\game_over.h"
 

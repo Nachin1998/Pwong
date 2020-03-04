@@ -1,6 +1,6 @@
 #include "player.h"
 
-#include "game_manager\game_manager.h"
+#include "managers\game_manager.h"
 
 namespace MyGame {
 namespace Player {

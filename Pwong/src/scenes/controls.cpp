@@ -1,7 +1,7 @@
 #include "controls.h"
 
-#include "scenes\main_menu_manager.h"
-#include "game_manager\game_manager.h"
+#include "managers\main_menu_manager.h"
+#include "managers\game_manager.h"
 #include "utility\UI.h"
 
 namespace MyGame {

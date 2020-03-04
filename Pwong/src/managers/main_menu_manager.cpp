@@ -26,7 +26,7 @@ namespace MainMenuManager {
 			Controls::update();
 			break;
 
-		case Credits:
+		case Options:
 			break;
 
 		default:
@@ -46,7 +46,7 @@ namespace MainMenuManager {
 			Controls::draw();
 			break;
 
-		case Credits:
+		case Options:
 			break;
 
 		default:

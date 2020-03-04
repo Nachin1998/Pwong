@@ -9,7 +9,7 @@ namespace MainMenuManager {
 	enum MainMenuScene {
 		MainMenu,
 		Controls,
-		Credits
+		Options
 	};
 
 	extern MainMenuScene mainMenuScene;

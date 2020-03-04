@@ -2,8 +2,8 @@
 
 #include <iostream>
 
-#include "scenes\main_menu_manager.h"
-#include "game_manager\game_manager.h"
+#include "managers\main_menu_manager.h"
+#include "managers\game_manager.h"
 #include "utility\UI.h"
 
 namespace MyGame {
@@ -39,7 +39,7 @@ using namespace GameManager;
 			menuButtons[i].rec.width = 250;
 			menuButtons[i].rec.height = 75;
 			menuButtons[i].rec.x = screenWidth / 2 - menuButtons[i].rec.width / 2;
-			menuButtons[i].rec.y = (screenHeight / 2 - 50 + (distanceBetweenButtons * i)) - menuButtons[i].rec.height / 2;
+			menuButtons[i].rec.y = (screenHeight / 2 - 80 + (distanceBetweenButtons * i)) - menuButtons[i].rec.height / 2;
 			menuButtons[i].lineThickness = 3;
 			menuButtons[i].fontSize = 40;
 			menuButtons[i].edgesColor = SKYBLUE;
@@ -69,10 +69,14 @@ using namespace GameManager;
 						break;
 
 					case 2:
-						MainMenuManager::mainMenuScene = MainMenuManager::Credits;
+						MainMenuManager::mainMenuScene = MainMenuManager::Options;
 						break;
 
 					case 3:
+						//Options
+						break;
+
+					case 4:
 						closeGame = true;
 						break;
 
@@ -95,8 +99,9 @@ using namespace GameManager;
 
 		createButton("Start", menuButtons[0]);
 		createButton("Controls", menuButtons[1]);
-		createButton("Credits", menuButtons[2]);
-		createButton("Exit", menuButtons[3]);
+		createButton("Options", menuButtons[2]);
+		createButton("Credits", menuButtons[3]);
+		createButton("Exit", menuButtons[4]);
 	}
 }
 }
