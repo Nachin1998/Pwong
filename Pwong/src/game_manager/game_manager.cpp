@@ -47,6 +47,8 @@ namespace GameManager{
 		InitWindow(screenWidth, screenHeight, "Pwong - by Ignacio Fernandez Lemos");
 		InitAudioDevice();
 
+		SetExitKey(KEY_F4);
+		
 		pongMusic = LoadMusicStream("res/music/BaseMusic.ogg");
 		
 		gameEdge.rec.width = screenWidth;
@@ -56,7 +58,6 @@ namespace GameManager{
 		gameEdge.linesThick = 15;
 		gameEdge.color = SKYBLUE;
 
-		SetExitKey(KEY_F4);
 
 		MainMenu::init();
 		Gameplay::init();
@@ -67,6 +68,7 @@ namespace GameManager{
 	}
 
 	void update() {
+
 		UpdateMusicStream(pongMusic);
 
 		if (Gameplay::pause) 

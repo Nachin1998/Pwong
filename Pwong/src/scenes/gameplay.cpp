@@ -20,6 +20,7 @@ using namespace GameManager;
 	static void gameLogic(Player::Player &player);
 
 	static float mapLimit = 15.0f;
+	static float pointsSize = 200.0f;
 	bool startGame = false;
 	bool endGame = false;
 	bool pause = false;
@@ -78,9 +79,9 @@ using namespace GameManager;
 
 			if (!pause)
 			{
-				Player::update();
-				ballUpdate();
-				SetMusicVolume(pongMusic, 1.0f);
+Player::update();
+ballUpdate();
+SetMusicVolume(pongMusic, 1.0f);
 			}
 			else
 			{
@@ -109,7 +110,7 @@ using namespace GameManager;
 
 	void draw() {
 
-		
+
 		if (!startGame)
 		{
 			UI::drawProText("Press ´Space´", screenWidth / 2, screenHeight / 2 - 50, 80, LIGHTGRAY);
@@ -118,24 +119,23 @@ using namespace GameManager;
 
 		if (startGame && !pause)
 		{
-			DrawText(FormatText("%i", Player::player1.score), screenWidth / 2 - MeasureText("0", 200) / 2 - 90, screenHeight / 2 - 92, 200, SKYBLUE);
+			UI::drawProText(FormatText("%i", Player::player1.score), screenWidth / 2 - 90, screenHeight / 2 - 92, pointsSize, SKYBLUE);
 			DrawRectangleRec(mapDivision.rec, mapDivision.color);
-			DrawText(FormatText("%i", Player::player2.score), screenWidth / 2 - MeasureText("0", 200) / 2 + 90, screenHeight / 2 - 92, 200, SKYBLUE);
+			UI::drawProText(FormatText("%i", Player::player2.score), screenWidth / 2 + 90, screenHeight / 2 - 92, pointsSize, SKYBLUE);
 		}
 
 		if (!pause)
 		{
 			Player::draw();
 			DrawCircleV(ball.pos, ball.radius, ball.color);
-			
 		}
 		else
 		{
 			UI::drawProText("Paused", screenWidth / 2, screenHeight / 2 - 250, 120, LIGHTGRAY);
 			UI::drawProText("Press ´P´ to continue", screenWidth / 2, screenHeight / 2 + 150, 50, LIGHTGRAY);
 
-			DrawText(FormatText("%i", Player::player1.score), screenWidth / 2 - MeasureText("0", 200) / 2 - 90, screenHeight / 2 - 92, 200, Player::player1.color);
-			DrawText(FormatText("%i", Player::player2.score), screenWidth / 2 - MeasureText("0", 200) / 2 + 90, screenHeight / 2 - 92, 200, Player::player2.color);
+			UI::drawProText(FormatText("%i", Player::player1.score), screenWidth / 2 - 90, screenHeight / 2 - 92, pointsSize, Player::player1.color);
+			UI::drawProText(FormatText("%i", Player::player2.score), screenWidth / 2 + 90, screenHeight / 2 - 92, pointsSize, Player::player2.color);
 
 			DrawCircleGradient(ball.pos.x, ball.pos.y, ball.radius, BLACK, WHITE);
 			DrawRectangleLinesEx(Player::player1.rec, 3, Player::player1.color);
@@ -173,9 +173,14 @@ using namespace GameManager;
 		{
 			PlaySound(hitSound);
 
-			if ((ball.pos.x < playerRec.x || ball.pos.x > playerRec.x) && (ball.pos.y < playerRec.y || ball.pos.y > playerRec.y))
+			if (ball.pos.y > playerRec.y && ball.pos.y < playerRec.y + playerRec.height)
 			{
 				ball.movementSpeed.x *= -1;
+			}
+
+			if (ball.pos.y < playerRec.y || ball.pos.y >  playerRec.y + playerRec.height) 
+			{
+				ball.movementSpeed.y *= -1;
 			}
 		}
 	}

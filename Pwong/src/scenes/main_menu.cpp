@@ -168,9 +168,10 @@ namespace MainMenu {
 
 		createButton("Controls", controlsTitle);
 
-		UI::drawProText("Movement", screenWidth / 2, screenHeight / 2 - 200, subTitleFontSize, titleTextColor);
-		UI::drawProText("Player 1 - W/S", screenWidth / 2, screenHeight / 2 - 120, textFontSize, textColor);
-		UI::drawProText("Player 2 - UP/DOWN", screenWidth / 2, screenHeight / 2 - 80, textFontSize, textColor);
+		//UI::drawProText("Keyboard", screenWidth / 2, screenHeight / 2 - 200, subTitleFontSize, titleTextColor);
+		UI::drawProText("Player 1 movement- W/S", screenWidth / 2, screenHeight / 2 - 200, textFontSize, textColor);
+		UI::drawProText("Player 2 movement- UP/DOWN", screenWidth / 2, screenHeight / 2 - 150, textFontSize, textColor);
+		UI::drawProText("Press ´P´ to pause", screenWidth / 2, screenHeight / 2 - 100, textFontSize, textColor);
 
 		UI::drawProText("Rules", screenWidth / 2, screenHeight / 2, subTitleFontSize, titleTextColor);
 		UI::drawProText("Control your paddle by moving it vertically", screenWidth / 2, screenHeight / 2 + 70, textFontSize, textColor);
