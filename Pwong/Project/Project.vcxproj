@@ -21,18 +21,22 @@
   <ItemGroup>
     <ClInclude Include="..\src\game_manager\game_manager.h" />
     <ClInclude Include="..\src\player\player.h" />
+    <ClInclude Include="..\src\scenes\controls.h" />
     <ClInclude Include="..\src\scenes\gameplay.h" />
     <ClInclude Include="..\src\scenes\game_over.h" />
     <ClInclude Include="..\src\scenes\main_menu.h" />
+    <ClInclude Include="..\src\scenes\main_menu_manager.h" />
     <ClInclude Include="..\src\utility\UI.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\src\game_manager\game_manager.cpp" />
     <ClCompile Include="..\src\main.cpp" />
     <ClCompile Include="..\src\player\player.cpp" />
+    <ClCompile Include="..\src\scenes\controls.cpp" />
     <ClCompile Include="..\src\scenes\gameplay.cpp" />
     <ClCompile Include="..\src\scenes\game_over.cpp" />
     <ClCompile Include="..\src\scenes\main_menu.cpp" />
+    <ClCompile Include="..\src\scenes\main_menu_manager.cpp" />
     <ClCompile Include="..\src\utility\UI.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

@@ -2,7 +2,7 @@
 
 #include <iostream>
 
-#include "scenes\main_menu.h"
+#include "scenes\main_menu_manager.h"
 #include "scenes\gameplay.h"
 #include "scenes\game_over.h"
 
@@ -59,7 +59,7 @@ namespace GameManager{
 		gameEdge.color = SKYBLUE;
 
 
-		MainMenu::init();
+		MainMenuManager::init();
 		Gameplay::init();
 		GameOver::init();
 
@@ -83,7 +83,7 @@ namespace GameManager{
 		switch (actualScene)
 		{
 		case MainMenu:
-			MainMenu::update();
+			MainMenuManager::update();
 			break;
 
 		case Game:
@@ -114,7 +114,7 @@ namespace GameManager{
 		switch (actualScene)
 		{
 		case MainMenu:
-			MainMenu::draw();
+			MainMenuManager::draw();
 			break;
 
 		case Game:

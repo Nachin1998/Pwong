@@ -36,6 +36,12 @@
     <ClInclude Include="..\src\utility\UI.h">
       <Filter>utility</Filter>
     </ClInclude>
+    <ClInclude Include="..\src\scenes\main_menu_manager.h">
+      <Filter>scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\scenes\controls.h">
+      <Filter>scenes</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\src\game_manager\game_manager.cpp">
@@ -57,5 +63,11 @@
       <Filter>utility</Filter>
     </ClCompile>
     <ClCompile Include="..\src\main.cpp" />
+    <ClCompile Include="..\src\scenes\controls.cpp">
+      <Filter>scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\scenes\main_menu_manager.cpp">
+      <Filter>scenes</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
