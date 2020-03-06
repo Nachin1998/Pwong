@@ -1,6 +1,7 @@
 #include "gameplay.h"
 
 #include "managers\game_manager.h"
+#include "scenes\options.h"
 #include "player\player.h"
 #include "utility\UI.h"
 
@@ -63,6 +64,18 @@ using namespace GameManager;
 			ball.active = true;
 		}
 
+		if (IsKeyPressed(KEY_M))
+		{
+			if (IsMusicPlaying(pongMusic))
+			{
+				PauseMusicStream(pongMusic);
+			}
+			else
+			{
+				ResumeMusicStream(pongMusic);
+			}
+		}
+
 		if (startGame)
 		{
 			if (IsKeyPressed(KEY_P))
@@ -79,9 +92,9 @@ using namespace GameManager;
 
 			if (!pause)
 			{
-Player::update();
-ballUpdate();
-SetMusicVolume(pongMusic, 1.0f);
+				Player::update();
+				ballUpdate();
+				SetMusicVolume(pongMusic, 1.0f);
 			}
 			else
 			{

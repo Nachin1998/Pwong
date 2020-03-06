@@ -42,6 +42,9 @@
     <ClInclude Include="..\src\managers\game_manager.h">
       <Filter>managers</Filter>
     </ClInclude>
+    <ClInclude Include="..\src\scenes\options.h">
+      <Filter>scenes</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\src\player\player.cpp">
@@ -68,6 +71,9 @@
     </ClCompile>
     <ClCompile Include="..\src\managers\game_manager.cpp">
       <Filter>managers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\scenes\options.cpp">
+      <Filter>scenes</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

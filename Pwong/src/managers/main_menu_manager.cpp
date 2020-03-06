@@ -1,17 +1,20 @@
 #include "main_menu_manager.h"
 
+#include "managers\game_manager.h"
 #include "scenes\main_menu.h"
 #include "scenes\controls.h"
+#include "scenes\options.h"
 
 namespace MyGame {
 namespace MainMenuManager {
 
-	MainMenuScene mainMenuScene = MainMenu;
+	MainMenuScene mainMenuScene = Options;
 
 	void init() {
 
 		MainMenu::init();
 		Controls::init();
+		Options::init();
 	}
 
 	void update() {
@@ -27,6 +30,7 @@ namespace MainMenuManager {
 			break;
 
 		case Options:
+			Options::update();
 			break;
 
 		default:
@@ -35,7 +39,7 @@ namespace MainMenuManager {
 	}
 
 	void draw() {
-		
+
 		switch (mainMenuScene)
 		{
 		case MainMenu:
@@ -47,6 +51,7 @@ namespace MainMenuManager {
 			break;
 
 		case Options:
+			Options::draw();
 			break;
 
 		default:

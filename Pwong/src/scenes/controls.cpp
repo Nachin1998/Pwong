@@ -22,7 +22,7 @@ using namespace GameManager;
 
 	void init() {
 
-		controlsTitle.rec.width = 380;
+		controlsTitle.rec.width = 450;
 		controlsTitle.rec.height = 120;
 		controlsTitle.rec.x = screenWidth / 2 - controlsTitle.rec.width / 2;
 		controlsTitle.rec.y = (screenHeight / 2 - 300) - controlsTitle.rec.height / 2;
@@ -62,7 +62,7 @@ using namespace GameManager;
 
 	void draw() {
 
-		createButton("Controls", controlsTitle);
+		createButton("CONTROLS", controlsTitle);
 
 		UI::drawProText("Player 1 movement- W/S", screenWidth / 2, screenHeight / 2 - 200, textFontSize, textColor);
 		UI::drawProText("Player 2 movement- UP/DOWN", screenWidth / 2, screenHeight / 2 - 150, textFontSize, textColor);

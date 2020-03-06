@@ -4,6 +4,7 @@
 
 #include "managers\main_menu_manager.h"
 #include "scenes\gameplay.h"
+#include "scenes\options.h"
 #include "scenes\game_over.h"
 
 namespace MyGame {
@@ -57,7 +58,7 @@ namespace GameManager{
 		gameEdge.rec.y = screenHeight / 2 - gameEdge.rec.height / 2;
 		gameEdge.linesThick = 15;
 		gameEdge.color = SKYBLUE;
-
+		backColor = WHITE;
 
 		MainMenuManager::init();
 		Gameplay::init();
