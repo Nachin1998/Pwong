@@ -58,7 +58,6 @@ namespace GameManager{
 		gameEdge.rec.y = screenHeight / 2 - gameEdge.rec.height / 2;
 		gameEdge.linesThick = 15;
 		gameEdge.color = SKYBLUE;
-		backColor = WHITE;
 
 		MainMenuManager::init();
 		Gameplay::init();
@@ -72,7 +71,7 @@ namespace GameManager{
 
 		UpdateMusicStream(pongMusic);
 
-		if (Gameplay::pause) 
+		if (Options::darkMode) 
 		{
 			backColor = BLACK;
 		}

@@ -51,7 +51,7 @@ using namespace GameManager;
 		mapDivision.color = SKYBLUE;
 
 		hitSound = LoadSound("res/sounds/hitSound.ogg");
-		SetSoundVolume(hitSound, 1.0f);
+		SetSoundVolume(hitSound, 0.5f);
 
 		Player::init();
 	}

@@ -6,6 +6,70 @@ namespace MyGame {
 namespace UI {
 using namespace GameManager;
 
+	void initTickBox(TickBox &tickBox, float size, float posX, float posY, int edgeThick, bool active, Color linesColor) {
+
+		tickBox.outerRec.width = size;
+		tickBox.outerRec.height = size;
+		tickBox.outerRec.x = posX - tickBox.outerRec.width / 2;
+		tickBox.outerRec.y = posY - tickBox.outerRec.height / 2;
+		tickBox.innerRec.width = tickBox.outerRec.width - 20;
+		tickBox.innerRec.height = tickBox.outerRec.height - 20;
+		tickBox.innerRec.x = posX - tickBox.innerRec.width / 2;
+		tickBox.innerRec.y = posY - tickBox.innerRec.height / 2;
+		tickBox.linesThick = edgeThick;
+		tickBox.active = active;
+		tickBox.outerColor = LIGHTGRAY;
+		tickBox.innerColor = BLANK;
+	}
+
+	void tickBoxCollision(TickBox &tickBox) {
+
+		if (CheckCollisionPointRec(GetMousePosition(), tickBox.outerRec))
+		{
+			if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON))
+			{
+				if (tickBox.active)
+				{
+					tickBox.active = false;
+				}
+				else
+				{
+					tickBox.active = true;
+				}
+			}
+
+			if (tickBox.active)
+			{
+				tickBox.outerColor = DARKGREEN;
+				tickBox.innerColor = DARKGREEN;
+			}
+			else
+			{
+				tickBox.outerColor = LIGHTGRAY;
+				tickBox.innerColor = LIGHTGRAY;
+			}
+		}
+		else
+		{
+			if (tickBox.active)
+			{
+				tickBox.outerColor = GREEN;
+				tickBox.innerColor = GREEN;
+			}
+			else
+			{
+				tickBox.outerColor = LIGHTGRAY;
+				tickBox.innerColor = BLANK;
+			}
+		}
+	}
+
+	void drawTickBox(TickBox tickBox) {
+
+		DrawRectangleLinesEx(tickBox.outerRec, tickBox.linesThick, tickBox.outerColor);
+		DrawRectangleRec(tickBox.innerRec, tickBox.innerColor);
+	}
+
 	void createButton(const char* text, Button button) {
 
 		DrawRectangleRec(button.rec, button.buttonColor);

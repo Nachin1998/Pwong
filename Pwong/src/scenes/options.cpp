@@ -8,27 +8,19 @@ namespace MyGame {
 namespace Options {
 using namespace GameManager;
 
-	static void muteButtonInit();
 	static void muteButtonUpdate();
-	static void darkModeInit();
 	static void darkModeUpdate();
-
-	struct tickButton {
-		Rectangle outerRec;
-		Rectangle innerRec;
-		float linesThick;
-		bool active;
-		Color outerColor;
-		Color innerColor;
-	};
 
 	static UI::Button optionsTitle;
 	static UI::Button backButton;
 
-	static tickButton muteButton;
+	static UI::TickBox muteTickBox;
+	static UI::TickBox darkModeTickBox;
 
 	Color mouseOverButton = LIGHTGRAY;
 	Color mouseAwayFromButton = BLANK;
+
+	bool darkMode = false;
 
 	void init() {
 
@@ -52,7 +44,8 @@ using namespace GameManager;
 		backButton.edgesColor = SKYBLUE;
 		backButton.buttonColor = BLANK;
 
-		muteButtonInit();
+		UI::initTickBox(muteTickBox, 50.0f, screenWidth / 2 + 120, screenHeight / 2 - 25, 5, false, LIGHTGRAY);
+		UI::initTickBox(darkModeTickBox, 50.0f, screenWidth / 2 + 120, screenHeight / 2 + 75, 5, false, LIGHTGRAY);
 	}
 
 	void update() {
@@ -72,6 +65,7 @@ using namespace GameManager;
 		}
 
 		muteButtonUpdate();
+		darkModeUpdate();
 	}
 
 	void draw() {
@@ -79,34 +73,20 @@ using namespace GameManager;
 		UI::createButton("OPTIONS", optionsTitle);
 
 		UI::drawProText("Mute song", screenWidth / 2 - 100, screenHeight / 2 - 50, 50, SKYBLUE);
-		DrawRectangleLinesEx(muteButton.outerRec, muteButton.linesThick, muteButton.outerColor);
-		DrawRectangleRec(muteButton.innerRec, muteButton.innerColor);
+		UI::drawTickBox(muteTickBox);
+
+		UI::drawProText("Dark mode", screenWidth / 2 - 100, screenHeight / 2 + 50, 50, SKYBLUE);
+		UI::drawTickBox(darkModeTickBox);
 
 		UI::createButton("Back", backButton);
 	}
 
-	void muteButtonInit() {
-
-		muteButton.outerRec.width = 50;
-		muteButton.outerRec.height = 50;
-		muteButton.outerRec.x = screenWidth / 2 + 100 - muteButton.outerRec.width / 2;
-		muteButton.outerRec.y = screenHeight / 2 - 25 - muteButton.outerRec.height / 2;
-		muteButton.innerRec.width = muteButton.outerRec.width - 20;
-		muteButton.innerRec.height = muteButton.outerRec.height - 20;
-		muteButton.innerRec.x = screenWidth / 2 + 100 - muteButton.innerRec.width / 2;
-		muteButton.innerRec.y = screenHeight / 2 - 25 - muteButton.innerRec.height / 2;
-		muteButton.linesThick = 5;
-		muteButton.active = false;
-		muteButton.outerColor = LIGHTGRAY;
-		muteButton.innerColor = BLANK;
-	}
-
 	void muteButtonUpdate() {
 
-		if (muteButton.active)
+		if (muteTickBox.active)
 		{
-			muteButton.outerColor = GREEN;
-			muteButton.innerColor = GREEN;
+			muteTickBox.outerColor = GREEN;
+			muteTickBox.innerColor = GREEN;
 			PauseMusicStream(pongMusic);
 		}
 		else
@@ -114,45 +94,23 @@ using namespace GameManager;
 			ResumeMusicStream(pongMusic);
 		}
 
-		if (CheckCollisionPointRec(GetMousePosition(), muteButton.outerRec))
-		{
-			if (muteButton.active)
-			{
-				muteButton.outerColor = DARKGREEN;
-				muteButton.innerColor = DARKGREEN;
-			}
-			else
-			{
-				muteButton.outerColor = mouseOverButton;
-				muteButton.innerColor = mouseOverButton;
-			}
+		UI::tickBoxCollision(muteTickBox);
+	}
 
-			if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON))
-			{
-				if (muteButton.active)
-				{
-					muteButton.active = false;
-				}
-				else
-				{
-					muteButton.active = true;
-				}
-			}
+	void darkModeUpdate() {
+
+		if (darkModeTickBox.active)
+		{
+			darkModeTickBox.outerColor = GREEN;
+			darkModeTickBox.innerColor = GREEN;
+			darkMode = true;
 		}
 		else
 		{
-			if (muteButton.active)
-			{
-				muteButton.outerColor = GREEN;
-				muteButton.innerColor = GREEN;
-			}
-			else
-			{
-				muteButton.outerColor = LIGHTGRAY;
-				muteButton.innerColor = BLANK;
-			}
-
+			darkMode = false;
 		}
+
+		UI::tickBoxCollision(darkModeTickBox);
 	}
 }
 }

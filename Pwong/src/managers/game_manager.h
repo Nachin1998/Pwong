@@ -18,6 +18,7 @@ namespace GameManager{
 
 	extern Scene actualScene;
 	extern Music pongMusic;
+	extern Color backColor;
 	extern bool closeGame;
 
 	void runGame();
