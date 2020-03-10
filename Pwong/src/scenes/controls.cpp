@@ -67,12 +67,14 @@ using namespace GameManager;
 		UI::drawProText("Player 1 movement- W/S", screenWidth / 2, screenHeight / 2 - 200, textFontSize, textColor);
 		UI::drawProText("Player 2 movement- UP/DOWN", screenWidth / 2, screenHeight / 2 - 150, textFontSize, textColor);
 		UI::drawProText("Press ´P´ to pause", screenWidth / 2, screenHeight / 2 - 100, textFontSize, textColor);
+		UI::drawProText("Press ´M´ mid game to mute or", screenWidth / 2, screenHeight / 2 - 50, textFontSize, textColor);
+		UI::drawProText("unmute", screenWidth / 2, screenHeight / 2 - 20, textFontSize, textColor);
 
-		UI::drawProText("Rules", screenWidth / 2, screenHeight / 2, subTitleFontSize, titleTextColor);
-		UI::drawProText("Control your paddle by moving it vertically", screenWidth / 2, screenHeight / 2 + 70, textFontSize, textColor);
-		UI::drawProText("and use it to hit the ball back and forth.", screenWidth / 2, screenHeight / 2 + 100, textFontSize, textColor);
-		UI::drawProText("Score 5 points before the opponent.", screenWidth / 2, screenHeight / 2 + 130, textFontSize, textColor);
-		UI::drawProText("Points are earned when one fails to return the ball.", screenWidth / 2, screenHeight / 2 + 160, textFontSize, textColor);
+		UI::drawProText("Rules", screenWidth / 2, screenHeight / 2 + 40, subTitleFontSize, titleTextColor);
+		UI::drawProText("Control your paddle by moving it vertically", screenWidth / 2, screenHeight / 2 + 110, textFontSize, textColor);
+		UI::drawProText("and use it to hit the ball back and forth.", screenWidth / 2, screenHeight / 2 + 140, textFontSize, textColor);
+		UI::drawProText("Score 5 points before the opponent.", screenWidth / 2, screenHeight / 2 + 170, textFontSize, textColor);
+		UI::drawProText("Points are earned when one fails to return the ball.", screenWidth / 2, screenHeight / 2 + 200, textFontSize, textColor);
 
 		UI::createButton("Back", controlsButton);
 	}

@@ -1,5 +1,7 @@
 #include "main_menu_manager.h"
 
+#include <iostream>
+
 #include "managers\game_manager.h"
 #include "scenes\main_menu.h"
 #include "scenes\controls.h"
@@ -34,6 +36,7 @@ namespace MainMenuManager {
 			break;
 
 		default:
+			std::cout << "There was an error in the main menu manager Update section" << std::endl;
 			break;
 		}
 	}
@@ -55,6 +58,7 @@ namespace MainMenuManager {
 			break;
 
 		default:
+			std::cout << "There was an error in the main menu manager Drawing section" << std::endl;
 			break;
 		}
 	}

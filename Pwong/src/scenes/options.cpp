@@ -44,7 +44,7 @@ using namespace GameManager;
 		backButton.edgesColor = SKYBLUE;
 		backButton.buttonColor = BLANK;
 
-		UI::initTickBox(muteTickBox, 50.0f, screenWidth / 2 + 120, screenHeight / 2 - 25, 5, false, LIGHTGRAY);
+		UI::initTickBox(muteTickBox, 50.0f, screenWidth / 2 + 120, screenHeight / 2 - 25, 5, true, LIGHTGRAY);
 		UI::initTickBox(darkModeTickBox, 50.0f, screenWidth / 2 + 120, screenHeight / 2 + 75, 5, false, LIGHTGRAY);
 	}
 
@@ -111,6 +111,15 @@ using namespace GameManager;
 		}
 
 		UI::tickBoxCollision(darkModeTickBox);
+
+		if (darkMode)
+		{
+			backColor = BLACK;
+		}
+		else
+		{
+			backColor = WHITE;
+		}
 	}
 }
 }

@@ -71,15 +71,6 @@ namespace GameManager{
 
 		UpdateMusicStream(pongMusic);
 
-		if (Options::darkMode) 
-		{
-			backColor = BLACK;
-		}
-		else
-		{
-			backColor = WHITE;
-		}
-
 		switch (actualScene)
 		{
 		case MainMenu:
