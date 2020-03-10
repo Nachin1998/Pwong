@@ -9,6 +9,7 @@
 namespace MyGame {
 namespace MainMenu {
 using namespace GameManager;
+using namespace MainMenuManager;
 
 	static UI::Button mainTitle;
 	static UI::Button menuButtons[maxButtons];
@@ -65,15 +66,15 @@ using namespace GameManager;
 						break;
 
 					case 1:
-						MainMenuManager::mainMenuScene = MainMenuManager::Controls;
+						mainMenuScene = MainMenuManager::Controls;
 						break;
 
 					case 2:
-						MainMenuManager::mainMenuScene = MainMenuManager::Options;
+						mainMenuScene = MainMenuManager::Options;
 						break;
 
 					case 3:
-						//Options
+						mainMenuScene = MainMenuManager::Credits;
 						break;
 
 					case 4:

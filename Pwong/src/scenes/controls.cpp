@@ -7,6 +7,7 @@
 namespace MyGame {
 namespace Controls {
 using namespace GameManager;
+using namespace MainMenuManager;
 
 	static UI::Button controlsTitle;
 	static UI::Button controlsButton;

@@ -3,6 +3,7 @@
 #include <iostream>
 
 #include "managers\game_manager.h"
+#include "managers\main_menu_manager.h"
 #include "scenes\gameplay.h"
 #include "player\player.h"
 #include "utility\UI.h"
@@ -57,7 +58,9 @@ using namespace GameManager;
 						break;
 
 					case 2:
-						actualScene = Credits;
+						Gameplay::init();
+						actualScene = MainMenu;
+						MainMenuManager::mainMenuScene = MainMenuManager::Credits;
 						break;
 
 					default:

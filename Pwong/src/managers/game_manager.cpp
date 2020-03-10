@@ -6,6 +6,7 @@
 #include "scenes\gameplay.h"
 #include "scenes\options.h"
 #include "scenes\game_over.h"
+#include "scenes\credits.h"
 
 namespace MyGame {
 namespace GameManager{
@@ -62,6 +63,7 @@ namespace GameManager{
 		MainMenuManager::init();
 		Gameplay::init();
 		GameOver::init();
+		Credits::init();
 
 		PlayMusicStream(pongMusic);
 		SetMusicVolume(pongMusic, 1.0f);
@@ -86,6 +88,7 @@ namespace GameManager{
 			break;
 
 		case Credits:
+			Credits::update();
 			break;
 
 		default:
@@ -117,6 +120,7 @@ namespace GameManager{
 			break;
 
 		case Credits:
+			Credits::draw();
 			break;
 
 		default:

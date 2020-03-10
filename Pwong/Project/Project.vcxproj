@@ -23,6 +23,7 @@
     <ClInclude Include="..\src\managers\main_menu_manager.h" />
     <ClInclude Include="..\src\player\player.h" />
     <ClInclude Include="..\src\scenes\controls.h" />
+    <ClInclude Include="..\src\scenes\credits.h" />
     <ClInclude Include="..\src\scenes\gameplay.h" />
     <ClInclude Include="..\src\scenes\game_over.h" />
     <ClInclude Include="..\src\scenes\main_menu.h" />
@@ -35,6 +36,7 @@
     <ClCompile Include="..\src\managers\main_menu_manager.cpp" />
     <ClCompile Include="..\src\player\player.cpp" />
     <ClCompile Include="..\src\scenes\controls.cpp" />
+    <ClCompile Include="..\src\scenes\credits.cpp" />
     <ClCompile Include="..\src\scenes\gameplay.cpp" />
     <ClCompile Include="..\src\scenes\game_over.cpp" />
     <ClCompile Include="..\src\scenes\main_menu.cpp" />

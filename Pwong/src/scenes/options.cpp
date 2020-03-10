@@ -7,6 +7,7 @@
 namespace MyGame {
 namespace Options {
 using namespace GameManager;
+using namespace MainMenuManager;
 
 	static void muteButtonUpdate();
 	static void darkModeUpdate();
@@ -17,8 +18,8 @@ using namespace GameManager;
 	static UI::TickBox muteTickBox;
 	static UI::TickBox darkModeTickBox;
 
-	Color mouseOverButton = LIGHTGRAY;
-	Color mouseAwayFromButton = BLANK;
+	static Color mouseOverButton = LIGHTGRAY;
+	static Color mouseAwayFromButton = BLANK;
 
 	bool darkMode = false;
 
@@ -34,12 +35,12 @@ using namespace GameManager;
 		optionsTitle.textColor = WHITE;
 		optionsTitle.buttonColor = SKYBLUE;
 
-		backButton.rec.width = 130;
+		backButton.rec.width = 160;
 		backButton.rec.height = 70;
 		backButton.rec.x = screenWidth / 2 - backButton.rec.width / 2;
-		backButton.rec.y = (screenHeight / 2 + 250) - backButton.rec.height / 2;
+		backButton.rec.y = (screenHeight / 2 + 300) - backButton.rec.height / 2;
 		backButton.lineThickness = 3;
-		backButton.fontSize = 30;
+		backButton.fontSize = 40;
 		backButton.textColor = SKYBLUE;
 		backButton.edgesColor = SKYBLUE;
 		backButton.buttonColor = BLANK;

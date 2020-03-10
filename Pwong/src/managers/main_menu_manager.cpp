@@ -6,17 +6,19 @@
 #include "scenes\main_menu.h"
 #include "scenes\controls.h"
 #include "scenes\options.h"
+#include "scenes\credits.h"
 
 namespace MyGame {
 namespace MainMenuManager {
 
-	MainMenuScene mainMenuScene = Options;
+	MainMenuScene mainMenuScene = MainMenu;
 
 	void init() {
 
 		MainMenu::init();
 		Controls::init();
 		Options::init();
+		Credits::init();
 	}
 
 	void update() {
@@ -33,6 +35,10 @@ namespace MainMenuManager {
 
 		case Options:
 			Options::update();
+			break;
+
+		case Credits:
+			Credits::update();
 			break;
 
 		default:
@@ -55,6 +61,10 @@ namespace MainMenuManager {
 
 		case Options:
 			Options::draw();
+			break;
+
+		case Credits:
+			Credits::draw();
 			break;
 
 		default:
