@@ -45,7 +45,7 @@ using namespace MainMenuManager;
 		backButton.edgesColor = SKYBLUE;
 		backButton.buttonColor = BLANK;
 
-		UI::initTickBox(muteTickBox, 50.0f, screenWidth / 2 + 120, screenHeight / 2 - 25, 5, true, LIGHTGRAY);
+		UI::initTickBox(muteTickBox, 50.0f, screenWidth / 2 + 120, screenHeight / 2 - 25, 5, false, LIGHTGRAY);
 		UI::initTickBox(darkModeTickBox, 50.0f, screenWidth / 2 + 120, screenHeight / 2 + 75, 5, false, LIGHTGRAY);
 	}
 
@@ -57,7 +57,7 @@ using namespace MainMenuManager;
 
 			if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON))
 			{
-				MainMenuManager::mainMenuScene = MainMenuManager::MainMenu;
+				mainMenuScene = menuSelection;
 			}
 		}
 		else

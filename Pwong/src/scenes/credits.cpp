@@ -51,7 +51,7 @@ using namespace MainMenuManager;
 
 			if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON))
 			{
-				mainMenuScene = MainMenuManager::MainMenu;
+				mainMenuScene = menuSelection;
 			}
 		}
 		else
@@ -69,11 +69,12 @@ using namespace MainMenuManager;
 		UI::drawProText("Ignacio Fernández Lemos", screenWidth / 2, screenHeight / 2 - 75, textFontSize, textColor);
 
 		UI::drawProText("Music & SFX", screenWidth / 2, screenHeight / 2, subTitleFontSize, titleTextColor);
-		UI::drawProText("Ignacio Fernández Lemos", screenWidth / 2, screenHeight / 2 + 45, textFontSize, textColor);
+		UI::drawProText("Song: `At Night` - Diys", screenWidth / 2, screenHeight / 2 + 45, textFontSize, textColor);
+		UI::drawProText("SFX: Ignacio Fernández Lemos", screenWidth / 2, screenHeight / 2 + 85, textFontSize, textColor);
 
-		UI::drawProText("Programs used", screenWidth / 2, screenHeight / 2 + 120, subTitleFontSize, titleTextColor);
-		UI::drawProText("Visual Studio C++", screenWidth / 2, screenHeight / 2 + 165, textFontSize, textColor);
-		UI::drawProText("Raylib Library", screenWidth / 2, screenHeight / 2 + 205, textFontSize, textColor);
+		UI::drawProText("Programs used", screenWidth / 2, screenHeight / 2 + 150, subTitleFontSize, titleTextColor);
+		UI::drawProText("Visual Studio C++", screenWidth / 2, screenHeight / 2 + 195, textFontSize, textColor);
+		UI::drawProText("Raylib Library", screenWidth / 2, screenHeight / 2 + 235, textFontSize, textColor);
 
 		UI::createButton("Back to main menu", backToMainMenu);
 	}

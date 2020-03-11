@@ -4,7 +4,6 @@
 
 #include "managers\main_menu_manager.h"
 #include "scenes\gameplay.h"
-#include "scenes\options.h"
 #include "scenes\game_over.h"
 #include "scenes\credits.h"
 
@@ -23,14 +22,14 @@ namespace GameManager{
 	};
 
 	static GameEdge gameEdge;
-
-	bool closeGame = false;
-
+	
 	Scene actualScene = MainMenu;
+
+	Music pongMusic;
 
 	Color backColor = WHITE;
 
-	Music pongMusic;
+	bool closeGame = false;
 
 	void runGame() {
 

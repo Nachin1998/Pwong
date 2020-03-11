@@ -52,7 +52,7 @@ using namespace MainMenuManager;
 
 			if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON))
 			{
-				MainMenuManager::mainMenuScene = MainMenuManager::MainMenu;
+				MainMenuManager::mainMenuScene = menuSelection;
 			}
 		}
 		else

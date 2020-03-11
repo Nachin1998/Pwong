@@ -11,6 +11,8 @@ namespace MainMenu {
 using namespace GameManager;
 using namespace MainMenuManager;
 
+	static const int maxButtons = 5;
+
 	static UI::Button mainTitle;
 	static UI::Button menuButtons[maxButtons];
 
@@ -66,11 +68,11 @@ using namespace MainMenuManager;
 						break;
 
 					case 1:
-						mainMenuScene = MainMenuManager::Controls;
+						mainMenuScene = Controls;
 						break;
 
 					case 2:
-						mainMenuScene = MainMenuManager::Options;
+						mainMenuScene = Options;
 						break;
 
 					case 3:

@@ -6,16 +6,6 @@
 namespace MyGame {
 namespace Gameplay {
 
-	struct Ball {
-		Vector2 pos;
-		float radius;
-		Vector2 movementSpeed;
-		bool active;
-		Color color;
-	};
-
-	extern Ball ball;
-
 	const int maxScore = 5;
 
 	extern bool pause;

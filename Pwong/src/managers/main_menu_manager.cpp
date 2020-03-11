@@ -11,7 +11,7 @@
 namespace MyGame {
 namespace MainMenuManager {
 
-	MainMenuScene mainMenuScene = MainMenu;
+	MainMenuScene mainMenuScene = menuSelection;
 
 	void init() {
 
@@ -25,7 +25,7 @@ namespace MainMenuManager {
 
 		switch (mainMenuScene)
 		{
-		case MainMenu:
+		case menuSelection:
 			MainMenu::update();
 			break;
 
@@ -51,7 +51,7 @@ namespace MainMenuManager {
 
 		switch (mainMenuScene)
 		{
-		case MainMenu:
+		case menuSelection:
 			MainMenu::draw();
 			break;
 

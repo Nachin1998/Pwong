@@ -3,5 +3,6 @@
 using namespace MyGame;
 
 int main(void) {
+
 	GameManager::runGame();
 }

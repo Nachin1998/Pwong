@@ -15,7 +15,10 @@ using namespace GameManager;
 	static const int maxButtons = 3;
 
 	static int buttonXdistance = 400;
+	static float pointSize = 200.0f;
 	static float scoreDistanceFromX = 120.0f;
+
+	static Color textColor = SKYBLUE;
 
 	static UI::Button gameOverButton[maxButtons];
 
@@ -80,16 +83,16 @@ using namespace GameManager;
 
 		if (Player::player1.score == Gameplay::maxScore)
 		{
-			UI::drawProText("Player 1 won!", screenWidth / 2, screenHeight / 2 - 300, 80, SKYBLUE);
+			UI::drawProText("Player 1 won!", screenWidth / 2, screenHeight / 2 - 300, 80, textColor);
 		}
 		else if (Player::player2.score == Gameplay::maxScore)
 		{
-			UI::drawProText("Player 2 won!", screenWidth / 2, screenHeight / 2 - 300, 80, SKYBLUE);
+			UI::drawProText("Player 2 won!", screenWidth / 2, screenHeight / 2 - 300, 80, textColor);
 		}
 
-		DrawText(FormatText("%i", Player::player1.score), screenWidth / 2 - MeasureText("0", 200) / 2 - scoreDistanceFromX, screenHeight / 2 - 100, 200, SKYBLUE);
-		UI::drawProText("|", screenWidth / 2, screenHeight / 2 - 120, 250, SKYBLUE);
-		DrawText(FormatText("%i", Player::player2.score), screenWidth / 2 - MeasureText("0", 200) / 2 + scoreDistanceFromX, screenHeight / 2 - 100, 200, SKYBLUE);
+		DrawText(FormatText("%i", Player::player1.score), screenWidth / 2 - MeasureText("0", 200) / 2 - scoreDistanceFromX, screenHeight / 2 - 100, pointSize, textColor);
+		UI::drawProText("|", screenWidth / 2, screenHeight / 2 - 120, 250, textColor);
+		DrawText(FormatText("%i", Player::player2.score), screenWidth / 2 - MeasureText("0", 200) / 2 + scoreDistanceFromX, screenHeight / 2 - 100, pointSize, textColor);
 
 		UI::createButton("Play Again", gameOverButton[0]);
 		UI::createButton("Main Menu", gameOverButton[1]);

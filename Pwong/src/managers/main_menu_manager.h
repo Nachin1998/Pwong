@@ -7,7 +7,7 @@ namespace MyGame {
 namespace MainMenuManager {
 
 	enum MainMenuScene {
-		MainMenu,
+		menuSelection,
 		Controls,
 		Options,
 		Credits

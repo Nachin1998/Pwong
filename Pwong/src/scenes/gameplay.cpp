@@ -9,11 +9,20 @@ namespace MyGame {
 namespace Gameplay {
 using namespace GameManager;
 
+	struct Ball {
+		Vector2 pos;
+		float radius;
+		Vector2 movementSpeed;
+		bool active;
+		Color color;
+	};
+	
 	struct MapDivision{
 		Rectangle rec;
 		Color color;
 	};
 
+	static Ball ball;
 	static MapDivision mapDivision;
 
 	static void ballUpdate();
@@ -22,13 +31,12 @@ using namespace GameManager;
 
 	static float mapLimit = 15.0f;
 	static float pointsSize = 200.0f;
+	static float ballSpeed = 400.0f;
 	bool startGame = false;
 	bool endGame = false;
 	bool pause = false;
 
 	static Sound hitSound;
-
-	Ball ball;
 
 	void init() {
 
@@ -39,8 +47,8 @@ using namespace GameManager;
 		ball.pos.x = screenWidth / 2;
 		ball.pos.y = screenHeight / 2;
 		ball.radius = 10.0f;
-		ball.movementSpeed.x = 400.0f;
-		ball.movementSpeed.y = 400.0f;
+		ball.movementSpeed.x = ballSpeed;
+		ball.movementSpeed.y = ballSpeed;
 		ball.active = false;
 		ball.color = LIGHTGRAY;
 
@@ -63,7 +71,7 @@ using namespace GameManager;
 			startGame = true;
 			ball.active = true;
 		}
-
+		
 		if (IsKeyPressed(KEY_M))
 		{
 			if (IsMusicPlaying(pongMusic))
@@ -99,6 +107,11 @@ using namespace GameManager;
 			else
 			{
 				SetMusicVolume(pongMusic, 0.3f);
+
+				if (!Options::darkMode)
+				{
+					backColor = BLACK;
+				}
 			}
 
 			collisionManager(Player::player1.rec);
@@ -122,7 +135,6 @@ using namespace GameManager;
 	}
 
 	void draw() {
-
 
 		if (!startGame)
 		{
