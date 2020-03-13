@@ -63,7 +63,7 @@ using namespace MainMenuManager;
 
 	void draw() {
 
-		createButton("CONTROLS", controlsTitle);
+		drawButton("CONTROLS", controlsTitle);
 
 		UI::drawProText("Player 1 movement- W/S", screenWidth / 2, screenHeight / 2 - 200, textFontSize, textColor);
 		UI::drawProText("Player 2 movement- UP/DOWN", screenWidth / 2, screenHeight / 2 - 150, textFontSize, textColor);
@@ -77,7 +77,7 @@ using namespace MainMenuManager;
 		UI::drawProText("Score 5 points before the opponent.", screenWidth / 2, screenHeight / 2 + 170, textFontSize, textColor);
 		UI::drawProText("Points are earned when one fails to return the ball.", screenWidth / 2, screenHeight / 2 + 200, textFontSize, textColor);
 
-		UI::createButton("Back", controlsButton);
+		UI::drawButton("Back", controlsButton);
 	}
 }
 }

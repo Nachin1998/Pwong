@@ -94,9 +94,9 @@ using namespace GameManager;
 		UI::drawProText("|", screenWidth / 2, screenHeight / 2 - 120, 250, textColor);
 		DrawText(FormatText("%i", Player::player2.score), screenWidth / 2 - MeasureText("0", 200) / 2 + scoreDistanceFromX, screenHeight / 2 - 100, pointSize, textColor);
 
-		UI::createButton("Play Again", gameOverButton[0]);
-		UI::createButton("Main Menu", gameOverButton[1]);
-		UI::createButton("Credits", gameOverButton[2]);
+		UI::drawButton("Play Again", gameOverButton[0]);
+		UI::drawButton("Main Menu", gameOverButton[1]);
+		UI::drawButton("Credits", gameOverButton[2]);
 	}
 }
 }

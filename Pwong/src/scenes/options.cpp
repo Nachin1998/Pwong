@@ -71,7 +71,7 @@ using namespace MainMenuManager;
 
 	void draw() {
 
-		UI::createButton("OPTIONS", optionsTitle);
+		UI::drawButton("OPTIONS", optionsTitle);
 
 		UI::drawProText("Mute song", screenWidth / 2 - 100, screenHeight / 2 - 50, 50, SKYBLUE);
 		UI::drawTickBox(muteTickBox);
@@ -79,7 +79,7 @@ using namespace MainMenuManager;
 		UI::drawProText("Dark mode", screenWidth / 2 - 100, screenHeight / 2 + 50, 50, SKYBLUE);
 		UI::drawTickBox(darkModeTickBox);
 
-		UI::createButton("Back", backButton);
+		UI::drawButton("Back", backButton);
 	}
 
 	void muteButtonUpdate() {

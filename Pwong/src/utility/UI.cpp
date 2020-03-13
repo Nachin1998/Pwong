@@ -70,7 +70,7 @@ using namespace GameManager;
 		DrawRectangleRec(tickBox.innerRec, tickBox.innerColor);
 	}
 
-	void createButton(const char* text, Button button) {
+	void drawButton(const char* text, Button button) {
 
 		DrawRectangleRec(button.rec, button.buttonColor);
 		DrawRectangleLinesEx(button.rec, static_cast<int>(button.lineThickness), button.edgesColor);

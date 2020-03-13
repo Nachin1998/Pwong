@@ -4,6 +4,7 @@
 
 #include "managers\game_manager.h"
 #include "scenes\main_menu.h"
+#include "../Project/player_customization.h"
 #include "scenes\controls.h"
 #include "scenes\options.h"
 #include "scenes\credits.h"
@@ -16,6 +17,7 @@ namespace MainMenuManager {
 	void init() {
 
 		MainMenu::init();
+		PlayerCustomization::init();
 		Controls::init();
 		Options::init();
 		Credits::init();
@@ -27,6 +29,10 @@ namespace MainMenuManager {
 		{
 		case menuSelection:
 			MainMenu::update();
+			break;
+
+		case playerCustomization:
+			PlayerCustomization::update();
 			break;
 
 		case Controls:
@@ -53,6 +59,10 @@ namespace MainMenuManager {
 		{
 		case menuSelection:
 			MainMenu::draw();
+			break;
+		
+		case playerCustomization:
+			PlayerCustomization::draw();
 			break;
 
 		case Controls:

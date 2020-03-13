@@ -8,6 +8,7 @@ namespace MainMenuManager {
 
 	enum MainMenuScene {
 		menuSelection,
+		playerCustomization,
 		Controls,
 		Options,
 		Credits

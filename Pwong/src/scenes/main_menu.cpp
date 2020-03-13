@@ -64,7 +64,7 @@ using namespace MainMenuManager;
 					switch (i)
 					{
 					case 0:
-						actualScene = Game;
+						mainMenuScene = playerCustomization;
 						break;
 
 					case 1:
@@ -98,13 +98,13 @@ using namespace MainMenuManager;
 
 	void draw() {
 
-		createButton("PWONG", mainTitle);
+		drawButton("PWONG", mainTitle);
 
-		createButton("Start", menuButtons[0]);
-		createButton("Controls", menuButtons[1]);
-		createButton("Options", menuButtons[2]);
-		createButton("Credits", menuButtons[3]);
-		createButton("Exit", menuButtons[4]);
+		drawButton("Start", menuButtons[0]);
+		drawButton("Controls", menuButtons[1]);
+		drawButton("Options", menuButtons[2]);
+		drawButton("Credits", menuButtons[3]);
+		drawButton("Exit", menuButtons[4]);
 	}
 }
 }

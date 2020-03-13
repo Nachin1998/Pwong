@@ -28,7 +28,7 @@ namespace UI {
 	void tickBoxCollision(TickBox &tickBox);
 	void drawTickBox(TickBox tickBox);
 
-	void createButton(const char *text, Button button);
+	void drawButton(const char *text, Button button);
 	
 	void drawProText(const char *text, float posX, float posY, float fontSize, Color textColor);
 }

@@ -62,7 +62,7 @@ using namespace MainMenuManager;
 
 	void draw() {
 
-		UI::createButton("Credits", creditsTitle);
+		UI::drawButton("Credits", creditsTitle);
 		UI::drawProText("Pwong", screenWidth / 2, screenHeight / 2 - 230, 60, titleTextColor);
 
 		UI::drawProText("Lead Progammer", screenWidth / 2, screenHeight / 2 - 120, subTitleFontSize, titleTextColor);
@@ -76,7 +76,7 @@ using namespace MainMenuManager;
 		UI::drawProText("Visual Studio C++", screenWidth / 2, screenHeight / 2 + 195, textFontSize, textColor);
 		UI::drawProText("Raylib Library", screenWidth / 2, screenHeight / 2 + 235, textFontSize, textColor);
 
-		UI::createButton("Back to main menu", backToMainMenu);
+		UI::drawButton("Back to main menu", backToMainMenu);
 	}
 }
 }
