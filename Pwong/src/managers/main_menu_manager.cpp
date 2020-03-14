@@ -4,7 +4,7 @@
 
 #include "managers\game_manager.h"
 #include "scenes\main_menu.h"
-#include "../Project/player_customization.h"
+#include "scenes\player_customization.h"
 #include "scenes\controls.h"
 #include "scenes\options.h"
 #include "scenes\credits.h"

@@ -4,6 +4,7 @@
 
 #include "managers\main_menu_manager.h"
 #include "managers\game_manager.h"
+#include "scenes\player_customization.h"
 #include "utility\UI.h"
 
 namespace MyGame {
@@ -49,6 +50,8 @@ using namespace MainMenuManager;
 			menuButtons[i].textColor = SKYBLUE;
 			menuButtons[i].buttonColor = BLANK;
 		}
+
+		PlayerCustomization::init();
 	}
 
 	void update() {

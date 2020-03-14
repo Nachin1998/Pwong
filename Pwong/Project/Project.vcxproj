@@ -28,8 +28,8 @@
     <ClInclude Include="..\src\scenes\game_over.h" />
     <ClInclude Include="..\src\scenes\main_menu.h" />
     <ClInclude Include="..\src\scenes\options.h" />
+    <ClInclude Include="..\src\scenes\player_customization.h" />
     <ClInclude Include="..\src\utility\UI.h" />
-    <ClInclude Include="player_customization.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\src\main.cpp" />
@@ -42,8 +42,8 @@
     <ClCompile Include="..\src\scenes\game_over.cpp" />
     <ClCompile Include="..\src\scenes\main_menu.cpp" />
     <ClCompile Include="..\src\scenes\options.cpp" />
+    <ClCompile Include="..\src\scenes\player_customization.cpp" />
     <ClCompile Include="..\src\utility\UI.cpp" />
-    <ClCompile Include="player_customization.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>

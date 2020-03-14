@@ -48,7 +48,7 @@
     <ClInclude Include="..\src\scenes\credits.h">
       <Filter>scenes</Filter>
     </ClInclude>
-    <ClInclude Include="player_customization.h">
+    <ClInclude Include="..\src\scenes\player_customization.h">
       <Filter>scenes</Filter>
     </ClInclude>
   </ItemGroup>
@@ -84,7 +84,7 @@
     <ClCompile Include="..\src\scenes\credits.cpp">
       <Filter>scenes</Filter>
     </ClCompile>
-    <ClCompile Include="player_customization.cpp">
+    <ClCompile Include="..\src\scenes\player_customization.cpp">
       <Filter>scenes</Filter>
     </ClCompile>
   </ItemGroup>

@@ -4,6 +4,7 @@
 
 #include "managers\game_manager.h"
 #include "managers\main_menu_manager.h"
+#include "scenes\player_customization.h"
 #include "scenes\gameplay.h"
 #include "player\player.h"
 #include "utility\UI.h"
@@ -57,13 +58,16 @@ using namespace GameManager;
 
 					case 1:
 						Gameplay::init();
+						PlayerCustomization::init();
+						MainMenuManager::mainMenuScene = MainMenuManager::menuSelection;
 						actualScene = MainMenu;
 						break;
 
 					case 2:
 						Gameplay::init();
-						actualScene = MainMenu;
+						PlayerCustomization::init();
 						MainMenuManager::mainMenuScene = MainMenuManager::Credits;
+						actualScene = MainMenu;
 						break;
 
 					default:

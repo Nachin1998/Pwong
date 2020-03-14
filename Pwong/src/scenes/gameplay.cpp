@@ -103,6 +103,10 @@ using namespace GameManager;
 				Player::update();
 				ballUpdate();
 				SetMusicVolume(pongMusic, 1.0f);
+				if (!Options::darkMode)
+				{
+					backColor = WHITE;
+				}
 			}
 			else
 			{
