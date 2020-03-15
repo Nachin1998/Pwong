@@ -24,11 +24,12 @@ namespace UI {
 		Color innerColor;
 	};
 	
-	void initTickBox(TickBox &tickBox, float size, float posX, float posY, int edgeThick, bool active, Color linesColor);
+	void initTickBox(TickBox &tickBox, float size, float posX, float posY, float edgeThick, bool active, Color linesColor);
 	void tickBoxCollision(TickBox &tickBox);
 	void drawTickBox(TickBox tickBox);
 
 	void drawButton(const char *text, Button button);
+	void updateButtonColor(Button &button);
 	
 	void drawProText(const char *text, float posX, float posY, float fontSize, Color textColor);
 }

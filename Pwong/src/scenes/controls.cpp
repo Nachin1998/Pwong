@@ -12,14 +12,11 @@ using namespace MainMenuManager;
 	static UI::Button controlsTitle;
 	static UI::Button controlsButton;
 
-	static int subTitleFontSize = 60;
-	static int textFontSize = 30;
 	static int distanceBetweenButtons = 95;
+	static float subTitleFontSize = 60;
+	static float textFontSize = 30;
 	static Color titleTextColor = SKYBLUE;
 	static Color textColor = LIGHTGRAY;
-
-	static Color mouseOverButton = LIGHTGRAY;
-	static Color mouseAwayFromButton = BLANK;
 
 	void init() {
 
@@ -46,18 +43,13 @@ using namespace MainMenuManager;
 
 	void update() {
 
+		UI::updateButtonColor(controlsButton);
 		if (CheckCollisionPointRec(GetMousePosition(), controlsButton.rec))
 		{
-			controlsButton.buttonColor = mouseOverButton;
-
 			if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON))
 			{
 				MainMenuManager::mainMenuScene = menuSelection;
 			}
-		}
-		else
-		{
-			controlsButton.buttonColor = mouseAwayFromButton;
 		}
 	}
 

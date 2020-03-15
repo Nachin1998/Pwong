@@ -6,7 +6,7 @@ namespace MyGame {
 namespace UI {
 using namespace GameManager;
 
-	void initTickBox(TickBox &tickBox, float size, float posX, float posY, int edgeThick, bool active, Color linesColor) {
+	void initTickBox(TickBox &tickBox, float size, float posX, float posY, float edgeThick, bool active, Color linesColor) {
 
 		tickBox.outerRec.width = size;
 		tickBox.outerRec.height = size;
@@ -66,7 +66,7 @@ using namespace GameManager;
 
 	void drawTickBox(TickBox tickBox) {
 
-		DrawRectangleLinesEx(tickBox.outerRec, tickBox.linesThick, tickBox.outerColor);
+		DrawRectangleLinesEx(tickBox.outerRec, static_cast<int>(tickBox.linesThick), tickBox.outerColor);
 		DrawRectangleRec(tickBox.innerRec, tickBox.innerColor);
 	}
 
@@ -80,9 +80,21 @@ using namespace GameManager;
 			button.textColor);
 	}
 
+	void updateButtonColor(Button &button) {
+
+		if (CheckCollisionPointRec(GetMousePosition(), button.rec))
+		{
+			button.buttonColor = LIGHTGRAY;
+		}
+		else
+		{
+			button.buttonColor = BLANK;
+		}
+	}
+
 	void drawProText(const char *text, float posX, float posY, float fontSize, Color textColor) {
 
-		DrawText(text, posX - MeasureText(text, fontSize) / 2, posY, fontSize, textColor);
+		DrawText(text, static_cast<int>(posX) - MeasureText(text, static_cast<int>(fontSize)) / 2, static_cast<int>(posY), static_cast<int>(fontSize), textColor);
 	}
 }
 }

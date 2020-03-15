@@ -22,9 +22,6 @@ namespace MainMenuManager {
 	extern Color titleTextColor;
 	extern Color textColor;
 
-	extern Color mouseOverButton;
-	extern Color mouseAwayFromButton;
-
 	void init();
 	void update();
 	void draw();

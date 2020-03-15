@@ -11,7 +11,7 @@ using namespace GameManager;
 
 	struct Ball {
 		Vector2 pos;
-		float radius;
+		int radius;
 		Vector2 movementSpeed;
 		bool active;
 		Color color;
@@ -46,7 +46,7 @@ using namespace GameManager;
 
 		ball.pos.x = screenWidth / 2;
 		ball.pos.y = screenHeight / 2;
-		ball.radius = 10.0f;
+		ball.radius = 10;
 		ball.movementSpeed.x = ballSpeed;
 		ball.movementSpeed.y = ballSpeed;
 		ball.active = false;
@@ -156,7 +156,7 @@ using namespace GameManager;
 		if (!pause)
 		{
 			Player::draw();
-			DrawCircleV(ball.pos, ball.radius, ball.color);
+			DrawCircleV(ball.pos, static_cast<float>(ball.radius), ball.color);
 		}
 		else
 		{
@@ -166,7 +166,7 @@ using namespace GameManager;
 			UI::drawProText(FormatText("%i", Player::player1.score), screenWidth / 2 - 90, screenHeight / 2 - 92, pointsSize, Player::player1.color);
 			UI::drawProText(FormatText("%i", Player::player2.score), screenWidth / 2 + 90, screenHeight / 2 - 92, pointsSize, Player::player2.color);
 
-			DrawCircleGradient(ball.pos.x, ball.pos.y, ball.radius, BLACK, WHITE);
+			DrawCircleGradient(static_cast<int>(ball.pos.x), static_cast<int>(ball.pos.y), static_cast<float>(ball.radius), BLACK, WHITE);
 			DrawRectangleLinesEx(Player::player1.rec, 3, Player::player1.color);
 			DrawRectangleLinesEx(Player::player2.rec, 3, Player::player2.color);
 		}
@@ -198,7 +198,7 @@ using namespace GameManager;
 
 	void collisionManager(Rectangle &playerRec) {
 
-		if (CheckCollisionCircleRec(ball.pos, ball.radius, playerRec))
+		if (CheckCollisionCircleRec(ball.pos, static_cast<float>(ball.radius), playerRec))
 		{
 			PlaySound(hitSound);
 

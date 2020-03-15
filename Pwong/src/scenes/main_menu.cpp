@@ -23,9 +23,6 @@ using namespace MainMenuManager;
 	static Color titleTextColor = SKYBLUE;
 	static Color textColor = LIGHTGRAY;
 
-	static Color mouseOverButton = LIGHTGRAY;
-	static Color mouseAwayFromButton = BLANK;
-
 	void init() {
 
 		mainTitle.rec.width = 420;
@@ -58,10 +55,9 @@ using namespace MainMenuManager;
 
 		for (int i = 0; i < maxButtons; i++)
 		{
+			UI::updateButtonColor(menuButtons[i]);
 			if (CheckCollisionPointRec(GetMousePosition(), menuButtons[i].rec))
 			{
-				menuButtons[i].buttonColor = mouseOverButton;
-
 				if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON))
 				{
 					switch (i)
@@ -91,10 +87,6 @@ using namespace MainMenuManager;
 						break;
 					}
 				}
-			}
-			else
-			{
-				menuButtons[i].buttonColor = mouseAwayFromButton;
 			}
 		}
 	}

@@ -18,9 +18,6 @@ using namespace MainMenuManager;
 	static UI::TickBox muteTickBox;
 	static UI::TickBox darkModeTickBox;
 
-	static Color mouseOverButton = LIGHTGRAY;
-	static Color mouseAwayFromButton = BLANK;
-
 	bool darkMode = false;
 
 	void init() {
@@ -51,18 +48,13 @@ using namespace MainMenuManager;
 
 	void update() {
 
+		UI::updateButtonColor(backButton);
 		if (CheckCollisionPointRec(GetMousePosition(), backButton.rec))
 		{
-			backButton.buttonColor = mouseOverButton;
-
 			if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON))
 			{
 				mainMenuScene = menuSelection;
 			}
-		}
-		else
-		{
-			backButton.buttonColor = mouseAwayFromButton;
 		}
 
 		muteButtonUpdate();

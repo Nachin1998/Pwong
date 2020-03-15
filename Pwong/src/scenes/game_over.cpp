@@ -43,10 +43,9 @@ using namespace GameManager;
 
 		for (int i = 0; i < maxButtons; i++) 
 		{
+			UI::updateButtonColor(gameOverButton[i]);
 			if (CheckCollisionPointRec(GetMousePosition(), gameOverButton[i].rec))
 			{
-				gameOverButton[i].buttonColor = LIGHTGRAY;
-
 				if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON))
 				{
 					switch (i)
@@ -76,10 +75,6 @@ using namespace GameManager;
 					}
 				}
 			}
-			else
-			{
-				gameOverButton[i].buttonColor = BLANK;
-			}
 		}
 	}
 
@@ -94,9 +89,9 @@ using namespace GameManager;
 			UI::drawProText("Player 2 won!", screenWidth / 2, screenHeight / 2 - 300, 80, textColor);
 		}
 
-		DrawText(FormatText("%i", Player::player1.score), screenWidth / 2 - MeasureText("0", 200) / 2 - scoreDistanceFromX, screenHeight / 2 - 100, pointSize, textColor);
+		UI::drawProText(FormatText("%i", Player::player1.score), screenWidth / 2 - scoreDistanceFromX, screenHeight / 2 - 100, pointSize, textColor);
 		UI::drawProText("|", screenWidth / 2, screenHeight / 2 - 120, 250, textColor);
-		DrawText(FormatText("%i", Player::player2.score), screenWidth / 2 - MeasureText("0", 200) / 2 + scoreDistanceFromX, screenHeight / 2 - 100, pointSize, textColor);
+		UI::drawProText(FormatText("%i", Player::player2.score), screenWidth / 2 + scoreDistanceFromX, screenHeight / 2 - 100, pointSize, textColor);
 
 		UI::drawButton("Play Again", gameOverButton[0]);
 		UI::drawButton("Main Menu", gameOverButton[1]);
