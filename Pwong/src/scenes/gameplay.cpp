@@ -26,6 +26,8 @@ using namespace GameManager;
 	static MapDivision mapDivision;
 
 	static void ballUpdate();
+	static void muteUpdate();
+	static void pauseUpdate();
 	static void collisionManager(Rectangle &playerRec);
 	static void gameLogic(Player::Player &player);
 
@@ -72,31 +74,11 @@ using namespace GameManager;
 			ball.active = true;
 		}
 		
-		if (IsKeyPressed(KEY_M))
-		{
-			if (IsMusicPlaying(pongMusic))
-			{
-				PauseMusicStream(pongMusic);
-			}
-			else
-			{
-				ResumeMusicStream(pongMusic);
-			}
-		}
+		muteUpdate();
 
 		if (startGame)
 		{
-			if (IsKeyPressed(KEY_P))
-			{
-				if (!pause)
-				{
-					pause = true;
-				}
-				else
-				{
-					pause = false;
-				}
-			}
+			pauseUpdate();
 
 			if (!pause)
 			{
@@ -193,6 +175,36 @@ using namespace GameManager;
 		if (ball.pos.y - ball.radius - mapLimit < 0 || ball.pos.y + ball.radius + mapLimit > screenHeight)
 		{
 			ball.movementSpeed.y *= -1;
+		}
+	}
+
+	void muteUpdate() {
+
+		if (IsKeyPressed(KEY_M))
+		{
+			if (IsMusicPlaying(pongMusic))
+			{
+				PauseMusicStream(pongMusic);
+			}
+			else
+			{
+				ResumeMusicStream(pongMusic);
+			}
+		}
+	}
+
+	void pauseUpdate() {
+
+		if (IsKeyPressed(KEY_P))
+		{
+			if (!pause)
+			{
+				pause = true;
+			}
+			else
+			{
+				pause = false;
+			}
 		}
 	}
 
