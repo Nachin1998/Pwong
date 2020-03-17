@@ -59,11 +59,11 @@ using namespace MainMenuManager;
 		UI::drawProText("Pwong", screenWidth / 2, screenHeight / 2 - 230, 60, titleTextColor);
 
 		UI::drawProText("Lead Progammer", screenWidth / 2, screenHeight / 2 - 120, subTitleFontSize, titleTextColor);
-		UI::drawProText("Ignacio Fernández Lemos", screenWidth / 2, screenHeight / 2 - 75, textFontSize, textColor);
+		UI::drawProText("Ignacio Fernandez Lemos", screenWidth / 2, screenHeight / 2 - 75, textFontSize, textColor);
 
 		UI::drawProText("Music & SFX", screenWidth / 2, screenHeight / 2, subTitleFontSize, titleTextColor);
 		UI::drawProText("Song: `At Night` - Diys", screenWidth / 2, screenHeight / 2 + 45, textFontSize, textColor);
-		UI::drawProText("SFX: Ignacio Fernández Lemos", screenWidth / 2, screenHeight / 2 + 85, textFontSize, textColor);
+		UI::drawProText("SFX: Ignacio Fernandez Lemos", screenWidth / 2, screenHeight / 2 + 85, textFontSize, textColor);
 
 		UI::drawProText("Programs used", screenWidth / 2, screenHeight / 2 + 150, subTitleFontSize, titleTextColor);
 		UI::drawProText("Visual Studio C++", screenWidth / 2, screenHeight / 2 + 195, textFontSize, textColor);

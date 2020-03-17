@@ -59,8 +59,8 @@ using namespace MainMenuManager;
 
 		UI::drawProText("Player 1 movement- W/S", screenWidth / 2, screenHeight / 2 - 200, textFontSize, textColor);
 		UI::drawProText("Player 2 movement- UP/DOWN", screenWidth / 2, screenHeight / 2 - 150, textFontSize, textColor);
-		UI::drawProText("Press ´P´ to pause", screenWidth / 2, screenHeight / 2 - 100, textFontSize, textColor);
-		UI::drawProText("Press ´M´ mid game to mute or", screenWidth / 2, screenHeight / 2 - 50, textFontSize, textColor);
+		UI::drawProText("Press `P` to pause", screenWidth / 2, screenHeight / 2 - 100, textFontSize, textColor);
+		UI::drawProText("Press `M` mid game to mute or", screenWidth / 2, screenHeight / 2 - 50, textFontSize, textColor);
 		UI::drawProText("unmute", screenWidth / 2, screenHeight / 2 - 20, textFontSize, textColor);
 
 		UI::drawProText("Rules", screenWidth / 2, screenHeight / 2 + 40, subTitleFontSize, titleTextColor);

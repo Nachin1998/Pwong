@@ -15,7 +15,7 @@ using namespace GameManager;
 
 	static const int maxButtons = 3;
 
-	static int buttonXdistance = 400;
+	static int xDistanceBetweenButtons = 400;
 	static float pointSize = 200.0f;
 	static float scoreDistanceFromX = 120.0f;
 
@@ -29,7 +29,7 @@ using namespace GameManager;
 		{
 			gameOverButton[i].rec.width = 280;
 			gameOverButton[i].rec.height = 90;
-			gameOverButton[i].rec.x = screenWidth / 2 - buttonXdistance + (buttonXdistance * i) - gameOverButton[i].rec.width / 2;
+			gameOverButton[i].rec.x = screenWidth / 2 - xDistanceBetweenButtons + (xDistanceBetweenButtons * i) - gameOverButton[i].rec.width / 2;
 			gameOverButton[i].rec.y = screenHeight / 2 + 280 - gameOverButton[i].rec.height / 2;
 			gameOverButton[i].fontSize = 40;
 			gameOverButton[i].lineThickness = 3;

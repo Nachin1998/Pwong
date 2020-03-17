@@ -16,12 +16,6 @@ namespace MainMenuManager {
 
 	extern MainMenuScene mainMenuScene;
 
-	extern int subTitleFontSize;
-	extern int textFontSize;
-	extern int distanceBetweenButtons;
-	extern Color titleTextColor;
-	extern Color textColor;
-
 	void init();
 	void update();
 	void draw();

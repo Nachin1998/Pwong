@@ -34,6 +34,7 @@ using namespace GameManager;
 	static float mapLimit = 15.0f;
 	static float pointsSize = 200.0f;
 	static float ballSpeed = 400.0f;
+
 	bool startGame = false;
 	bool endGame = false;
 	bool pause = false;
@@ -85,6 +86,7 @@ using namespace GameManager;
 				Player::update();
 				ballUpdate();
 				SetMusicVolume(pongMusic, 1.0f);
+
 				if (!Options::darkMode)
 				{
 					backColor = WHITE;
@@ -143,7 +145,7 @@ using namespace GameManager;
 		else
 		{
 			UI::drawProText("Paused", screenWidth / 2, screenHeight / 2 - 250, 120, LIGHTGRAY);
-			UI::drawProText("Press ´P´ to continue", screenWidth / 2, screenHeight / 2 + 150, 50, LIGHTGRAY);
+			UI::drawProText("Press `P` to continue", screenWidth / 2, screenHeight / 2 + 150, 50, LIGHTGRAY);
 
 			UI::drawProText(FormatText("%i", Player::player1.score), screenWidth / 2 - 90, screenHeight / 2 - 92, pointsSize, Player::player1.color);
 			UI::drawProText(FormatText("%i", Player::player2.score), screenWidth / 2 + 90, screenHeight / 2 - 92, pointsSize, Player::player2.color);

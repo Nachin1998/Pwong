@@ -26,6 +26,7 @@ using namespace GameManager;
 	static float buttonDistanceFromX = 150;
 	static float distanceFromY = 120;
 	static float textDistanceFromY = 60;
+	static float yPosFix = 30;
 
 	static Color colorSelection[maxColors];
 
@@ -59,7 +60,7 @@ using namespace GameManager;
 
 	void draw() {
 
-		UI::drawProText("Choose your paddle´s color", screenWidth / 2, screenHeight / 2 - 350, titleFontSize, LIGHTGRAY);
+		UI::drawProText("Choose your paddle`s color", screenWidth / 2, screenHeight / 2 - 350, titleFontSize, LIGHTGRAY);
 
 		DrawRectangleRec(player1Rec, player1Color);
 		DrawRectangleLinesEx(player1Rec, 5, edgesColor);
@@ -111,12 +112,12 @@ using namespace GameManager;
 		player1Rec.width = 230;
 		player1Rec.height = 50;
 		player1Rec.x = screenWidth / 2 - player1Rec.width / 2;
-		player1Rec.y = screenHeight / 2 - distanceFromY - player1Rec.height / 2;
+		player1Rec.y = screenHeight / 2 - distanceFromY - yPosFix - player1Rec.height / 2;
 
 		player2Rec.width = 230;
 		player2Rec.height = 50;
 		player2Rec.x = screenWidth / 2 - player2Rec.width / 2;
-		player2Rec.y = screenHeight / 2 + distanceFromY - player2Rec.height / 2;
+		player2Rec.y = screenHeight / 2 + distanceFromY - yPosFix - player2Rec.height / 2;
 	}
 
 	void initButtons() {
@@ -133,16 +134,16 @@ using namespace GameManager;
 		}
 
 		changePlayerColorButton[0].rec.x = screenWidth / 2 - buttonDistanceFromX - changePlayerColorButton[0].rec.width / 2;
-		changePlayerColorButton[0].rec.y = screenHeight / 2 - distanceFromY - changePlayerColorButton[0].rec.height / 2;
+		changePlayerColorButton[0].rec.y = screenHeight / 2 - distanceFromY - yPosFix - changePlayerColorButton[0].rec.height / 2;
 
 		changePlayerColorButton[1].rec.x = screenWidth / 2 + buttonDistanceFromX - changePlayerColorButton[1].rec.width / 2;
-		changePlayerColorButton[1].rec.y = screenHeight / 2 - distanceFromY - changePlayerColorButton[1].rec.height / 2;
+		changePlayerColorButton[1].rec.y = screenHeight / 2 - distanceFromY - yPosFix - changePlayerColorButton[1].rec.height / 2;
 
 		changePlayerColorButton[2].rec.x = screenWidth / 2 - buttonDistanceFromX - changePlayerColorButton[2].rec.width / 2;
-		changePlayerColorButton[2].rec.y = screenHeight / 2 + distanceFromY - changePlayerColorButton[2].rec.height / 2;
+		changePlayerColorButton[2].rec.y = screenHeight / 2 + distanceFromY - yPosFix - changePlayerColorButton[2].rec.height / 2;
 
 		changePlayerColorButton[3].rec.x = screenWidth / 2 + buttonDistanceFromX - changePlayerColorButton[3].rec.width / 2;
-		changePlayerColorButton[3].rec.y = screenHeight / 2 + distanceFromY - changePlayerColorButton[3].rec.height / 2;
+		changePlayerColorButton[3].rec.y = screenHeight / 2 + distanceFromY - yPosFix - changePlayerColorButton[3].rec.height / 2;
 
 		startGame.rec.width = 300;
 		startGame.rec.height = 60;
