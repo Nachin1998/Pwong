@@ -124,7 +124,7 @@ using namespace GameManager;
 
 		if (!startGame)
 		{
-			UI::drawProText("Press ´Space´", screenWidth / 2, screenHeight / 2 - 50, 80, LIGHTGRAY);
+			UI::drawProText("Press `Space`", screenWidth / 2, screenHeight / 2 - 50, 80, LIGHTGRAY);
 			UI::drawProText("to start the game", screenWidth / 2, screenHeight / 2 + 30, 80, LIGHTGRAY);
 		}
 
